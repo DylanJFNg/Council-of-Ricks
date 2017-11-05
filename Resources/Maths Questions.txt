@@ -1,0 +1,5 @@
+1) What percentage of the numbers 1-10 are prime?
+a) 40%
+b) 50%
+c) 30%
+d) 0%

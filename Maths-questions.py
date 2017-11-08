@@ -10,7 +10,7 @@ global data
 Index1 = open("Resources/Index.json","r")
 JsonIndex= json.load(Index1)
 question1=JsonIndex["Index"]["1"]["q"]
-realquestion1=str(question1) 
+
 
  
 window2= Tk()
@@ -30,7 +30,7 @@ text_file2= open("Resources/Possible answers.txt", "r")
 text_file3= open("Resources/Possible answers 2.txt","r")
 text_file4= open("Resources/Possible answers 3.txt","r")
 text_file5= open("Resources/Possible answers 4.txt","r")
-Lines= Label(window2,text=realquestion1)
+Lines= Label(window2,text=question1)
 Button1= Button(window2,text=text_file2.read(6), command= Correct)
 Button2= Button(window2,text=text_file3.read(6), command= Incorrect)
 Button3= Button(window2,text=text_file4.read(6), command=Incorrect)

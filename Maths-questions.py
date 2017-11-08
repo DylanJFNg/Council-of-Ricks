@@ -3,10 +3,13 @@ import tkinter as Tk
 from tkinter import *
 import json
 from pprint import pprint
+global data
+
+
 
 Index1 = open("Resources/Index.json","r")
 JsonIndex= json.load(Index1)
-question1=[d["Index"]["1"]["q"] for d in Index1]
+question1=JsonIndex["Index"]["1"]["q"]
 realquestion1=str(question1) 
 
  

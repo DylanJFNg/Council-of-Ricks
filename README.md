@@ -1,2 +1,2 @@
 # Council-of-Ricks
-We are amazing we use github
+We are the Ricks and they are the mortys.

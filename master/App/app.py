@@ -63,7 +63,7 @@ def english():
         count = 0
         eng.geometry("400x400")
         eng.title("English Quiz")
-        while count <= 11:
+        while count < 11:
             # This "while" statement will close the window once you have
             # answered 10 questions on english
             qq = get_questions("english.json")
@@ -74,14 +74,21 @@ def english():
             question_label = Label(eng, text=qq[4], font="30")
             question_label.pack()
 
-            eng_b1 = Button(eng, text=qq[0])
-            eng_b2 = Button(eng, text=qq[1])
-            eng_b3 = Button(eng, text=qq[2])
-            eng_b4 = Button(eng, text=qq[3])
-            bttns = [eng_b1, eng_b2, eng_b3, eng_b4]
-            shuffle(bttns)
-            for eng in bttns:
-                eng.pack()
+            def set_button_names(command):
+                if command == "set":
+                    eng_b1 = Button(eng, text=qq[0])
+                    eng_b2 = Button(eng, text=qq[1])
+                    eng_b3 = Button(eng, text=qq[2])
+                    eng_b4 = Button(eng, text=qq[3])
+                    bttns = [eng_b1, eng_b2, eng_b3, eng_b4]
+                    return bttns
+
+            def place_buttons():
+                bttns = set_button_names("set")
+                shuffle(bttns)
+                for eng_ in bttns:
+                    eng_.pack()
+            place_buttons()
             eng.mainloop()
     quiz()
     tkMessageBox.showinfo("Score", "Your Score Was: %s" % "you are a faliur")

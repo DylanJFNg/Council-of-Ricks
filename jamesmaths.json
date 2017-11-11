@@ -14,31 +14,31 @@
 	"c": "All the sides of a scalene triangle are the same but the angles are different",
 	"d": "All angles of a scalene triangle are different but all the sides are the same length",
 	"q": "What are the properties of a scalene triangle?"
-  },
+  	},
   
- }
- "3": {
- "a": "n",
- "b": "2n",
- "c": "3n",
- "d": "3n squared",
- "q": "What is the nth term of the sequence: 1,2,3,4,5,6,7,8,9"
- }
+ 	
+ 	"3": {
+ 	"a": "n",
+ 	"b": "2n",
+ 	"c": "3n",
+ 	"d": "3n squared",
+ 	"q": "What is the nth term of the sequence: 1,2,3,4,5,6,7,8,9"
+ 	},
  
- },
- "4": {
- "a": "-7n-6",
- "b": "3n+112",
- "c": "-9n+67",
- "d": "-3n+1",
- "q": "What is the nth term of the sequence: -13,-20,-27,-34"
- }
  
- },
- "5": {
- "a": "469.99",
- "b": "666.443222",
- "c": "389",
- "d": "390",
- "q": "70.89+339.1"
+ 	"4": {
+ 	"a": "-7n-6",
+ 	"b": "3n+112",
+ 	"c": "-9n+67",
+ 	"d": "-3n+1",
+ 	"q": "What is the nth term of the sequence: -13,-20,-27,-34"
+ 	},
  
+ 	"5": {
+ 	"a": "469.99",
+ 	"b": "666.443222",
+ 	"c": "389",
+ 	"d": "390",
+ 	"q": "70.89+339.1"
+	}
+}

@@ -12,28 +12,28 @@
 			"b": "Sin-1",
 			"c": "Cos-1",
 			"d": "Sin-1, cos-1",
-			"q": "2) Name all the trigonometrical functions" 				
+			"q": "Name all the trigonometrical functions" 				
 		},
 		"3": {	
 			"a": "60 degrees",
 			"b": "120 degrees",
 			"c": "180 degrees",
 			"d": "30 degrees",
-			"q": "3) What is an angle in an equilateral triangle?"
+			"q": "What is an angle in an equilateral triangle?"
 		},
 		"4": {			
 			"a": "X = (-b + or - square root of (b squared -4ac))/2a",
 			"b": "Y = (b- square root of (b squared -4ac))/2a",
 			"c": "X =(c + square root of (a squared- 4bc)/2a",
 			"d": "Y= c- square root of n squared",
-			"q": "4) What is the quadratic formula?"
+			"q": "What is the quadratic formula?"
 		},
 		"5": {
 			"a": "a) 9/16",
 			"b": "b) 7/16",
 			"c": "1/2" ,
 			"d": "5/8",
-			"q": "5) There are 640 marbles in a bag. There are red, blue, and green marbles. After losing a total of 47 green and blue marbles, there are a total of 113 green and blue marbles left. Assuming you still had all the marbles, what are the odds of drawing a red marble two times in a row?"
+			"q": "There are 640 marbles in a bag. There are red, blue, and green marbles. After losing a total of 47 green and blue marbles, there are a total of 113 green and blue marbles left. Assuming you still had all the marbles, what are the odds of drawing a red marble two times in a row?"
 		},
 		"6": {
 

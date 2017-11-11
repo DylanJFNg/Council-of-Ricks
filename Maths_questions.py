@@ -5,12 +5,13 @@ import json
 from pprint import pprint
 from random import randint, shuffle
 from builtins import str
-
-
+import sys
+import os
 Index1 = open("Resources/Index.json","r")
 JsonIndex= json.load(Index1)
 
 count=0
+
 
 
 window2= Tk()
@@ -28,8 +29,9 @@ def get_MathsQuestions():
 def Correct():
     from tkinter import messagebox
     messagebox.showinfo(title="You're right!", message="Well done! You got the answer correct!")
-    window2.destroy()
-    
+    python = sys.executable
+    os.execl(python, python, * sys.argv)
+    import Maths
 def Incorrect():
     from tkinter import messagebox
     messagebox.showinfo(title="Incorrect answer", message= "That's the wrong answer. Try again.")

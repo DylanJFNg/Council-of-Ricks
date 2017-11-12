@@ -30,7 +30,7 @@
 	},
 	"5": {
 		"a": "a) 9/16",
-		"b": "b) 7/16",
+"		"b": "b) 7/16",
 		"c": "1/2" ,
 		"d": "5/8",
 		"q": "There are 640 marbles in a bag. There are red, blue, and green marbles. After losing a total of 47 green and blue marbles, there are a total of 113 green and blue marbles left. Assuming you still had all the marbles, what are the odds of drawing a red marble two times in a row?"
@@ -96,7 +96,7 @@
 		"b": "4",
 		"c": "2",
 		"d": "5",
-		"q": "How many sides does a triangle have?
+		"q": "How many sides does a triangle have?"
 	},
 	"15": {
 		"a": "3",

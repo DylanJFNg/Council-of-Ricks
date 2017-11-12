@@ -1,3 +1,4 @@
+
 Here is a number written in index form:
 2^4
 2 is the base number and 4 is the index or power.

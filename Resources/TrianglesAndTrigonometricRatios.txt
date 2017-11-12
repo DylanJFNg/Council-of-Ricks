@@ -1,3 +1,4 @@
+Trigonometry
 Trigonometry involves calculating angles and sides in triangles.
 The three sides of a right-angled triangle have specific names.
 The hypotenuse () is the longest side. It is opposite the right angle.
@@ -16,10 +17,6 @@ The length of the third side of the triangle can be calculated using Pythagoras'
 
 A calculator can be used to find cos,sin and tan.
 
-
-
-
-
 Pythagoras' theorem
 The longest side of a right-angled triangle is the hypotenuse. The hypotenuse is always opposite the right angle.
 
@@ -31,3 +28,11 @@ This is Pythagoras' theorem.
 Pythagoras' theorem states that, in any right-angled triangle, the square of the hypotenuse is equal to the sum of the squares on the other two sides.
 If the sides of the right-angled triangle are labelled ,  and  then Pythagoras' theorem states: 
 a^2+b^2=c^2
+
+
+
+
+
+
+
+

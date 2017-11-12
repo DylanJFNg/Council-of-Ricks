@@ -78,6 +78,7 @@ def Revision():
         BackButton2=Button(window3,text="Back",command=back2)
         BackButton2.pack()
         window3.mainloop()
+        
     def ReadAngles():
         def back3():
             Label3.pack_forget()
@@ -101,6 +102,7 @@ def Revision():
         BackButton2=Button(window3,text="Back",command=back3)
         BackButton2.pack()
         window3.mainloop()
+        
     def ReadIndices():
         def back4():
             Label5.pack_forget()
@@ -124,6 +126,7 @@ def Revision():
         BackButton2=Button(window3,text="Back",command=back4)
         BackButton2.pack()
         window3.mainloop()  
+        
     def ReadSequences():
         def back5():
             Label4.pack_forget()
@@ -236,3 +239,5 @@ def MathsQuestions():
 
 InitMaths()
   
+
+

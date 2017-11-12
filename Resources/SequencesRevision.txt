@@ -1,3 +1,4 @@
+
 Number sequences are sets of numbers that follow a pattern or a rule.
 If the rule is to add or subtract a number each time, it is called an arithmetic sequence.
 If the rule is to multiply or divide by a number each time, it is called a geometric sequence.
@@ -19,4 +20,5 @@ Example 2
 term to term rule and then work out the next two terms in the following sequence.
 -1, -0.5, 0, 0.5, ...
 The first term is -1. The term to term rule is 'add 0.5'.
+
 

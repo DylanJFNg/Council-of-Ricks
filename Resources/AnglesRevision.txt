@@ -1,0 +1,8 @@
+There are 360° in a full turn, 180° in a half turn and 90° in a quarter turn. A quarter turn is called a right angle.
+A right angle is shown.
+|_
+There are three different types of angle.
+
+An acute angle is an angle less than 90°.
+An obtuse angle is an angle between 90° and 180°.
+A reflex angle is an angle between 180° and 360°.

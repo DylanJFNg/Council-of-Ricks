@@ -5,7 +5,4 @@ Here is a number written in index form:
 The power or index shows how many times a number has been multiplied by itself.
 Using algebra
 a^3
-(read as ‘ cubed’) is a short way of writing . 
-has been multiplied by itself three times.
-Similarly,  (read as ' squared’) is a short way of writing .
-has been multiplied by itself.
+(read as ‘ cubed’) is a short way of writing has been multiplied by itself three times.

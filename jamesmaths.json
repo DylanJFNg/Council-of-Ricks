@@ -6,8 +6,8 @@
 	"c": "x=6",
 	"d": "x=8",
 	"q": "Solve the equation: 6x+9=9x+1?
-	
 	},
+	
 	"2": {,
 	"a": "All the sides of a scalene triangle are different as well as the value of the angles",
 	"b": "All the sides of a scalene triangle are different but 2 of the angles are equal",
@@ -40,8 +40,8 @@
  	"c": "389",
  	"d": "390",
  	"q": "70.89+339.1"
-	}
-}
+	},
+
 	"6": {
 	"a": "35.75",
 	"b": "67.43",
@@ -57,3 +57,4 @@
 	"d": "5837589347589km"
 	"q": "Convert 8.3km to mm"
 	     }
+

@@ -50,11 +50,32 @@
 	"q": "Increase 9 by 297%"
 	}
 
-	"7": {,
+	"7": {
 	"a": "83000000mm",
 	"b":"85500000000mm",
 	"c": "56456456456mm",
 	"d": "5837589347589km"
 	"q": "Convert 8.3km to mm"
-	     }
+	},
+
+	"8": {
+	"a": "h=6"
+	"b": "h=9"
+	"c": "h=77"
+	"d": "h=34"
+	"q": "Solve -2h+10h=9h+4"
+	}
+
+	"9": {
+	"a": "7x10 to the power of 0",
+	"b": "7x10 to the power of 100",
+	"c": "9x23 to the power of 245",
+	"d": "123x0 to the power of 0",
+	"q": "Write 7 in standard form."
+	}
+
+	"10": {
+	"a":
+	
+
 

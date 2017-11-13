@@ -28,8 +28,8 @@ def Revision():
 
     
     def back():
-        python = sys.executable
-        os.execl(python, python, * sys.argv)
+        window3.destroy()
+        InitMaths()
 
     TrianglesText=open("Resources\TrianglesAndTrigonometricRatios.txt","r")
     SequencesText=open("Resources\SequencesRevision.txt","r")
@@ -212,8 +212,8 @@ def MathsQuestions():
     def Correct():
         from tkinter import messagebox
         messagebox.showinfo(title="You're right!", message="Well done! You got the answer correct!")
-        python = sys.executable
-        os.execl(python, python, * sys.argv)
+        window2.destroy()
+        InitMaths()
         
     def Incorrect():
         from tkinter import messagebox

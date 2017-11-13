@@ -6,23 +6,24 @@ import json
 from pprint import pprint
 from random import randint, shuffle
 from builtins import str
-
-def InitMaths2():
-    i=0
-    while i<1:
-        Realwindow.destroy()
-        i=i+1
-    Realwindow=Tk()
+Realwindow=Tk()
+def InitMaths():      
     Realwindow.title("Mathematics Department")
     Realwindow.geometry("400x200")
     Realwindow.configure(background='Dark Blue')
-    widget = Label(Realwindow, text= 'Do you want revision notes or questions?',bg='Light Blue')
-    widget2= Button(Realwindow, text='Revision notes',bg='Cyan',fg='Red',command=Revision)
-    widget3= Button(Realwindow, text='Randomly selected questions',bg='Cyan',fg='Red',command=MathsQuestions)
-    widget.pack()
-    widget2.pack()
-    widget3.pack()
-    Realwindow.mainloop()
+    def WindowDestruction():
+        global i
+        i=0
+        while i==0:
+            widget = Label(Realwindow, text= 'Do you want revision notes or questions?',bg='Light Blue')
+            widget2= Button(Realwindow, text='Revision notes',bg='Cyan',fg='Red',command=Revision)
+            widget3= Button(Realwindow, text='Randomly selected questions',bg='Cyan',fg='Red',command=MathsQuestions)
+            widget.pack()
+            widget2.pack()
+            widget3.pack()
+            Realwindow.mainloop()
+        i=i+1
+    WindowDestruction()
 def Revision():
     window3=Tk()
     window3.title("Revision")
@@ -30,7 +31,7 @@ def Revision():
     window3.configure(background='Dark Blue')
     def back():
         window3.destroy()
-        InitMaths2()
+        InitMaths()
     TrianglesText=open("Resources\TrianglesAndTrigonometricRatios.txt","r")
     SequencesText=open("Resources\SequencesRevision.txt","r")
     AnglesText=open("Resources\AnglesRevision.txt","r")
@@ -51,8 +52,6 @@ def Revision():
 
     Prime=PrimeText.read()
     Label6=Label(window3,text=Prime,font=("none",10))
-
-
 
     def ReadTriangles():
         def back2():
@@ -190,7 +189,6 @@ def Revision():
     TrianglesButton.pack()
     BackButton.pack()
     window3.mainloop()
-    Realwindow.destroy()
 def MathsQuestions():
     Index1 = open("Resources/Index.json","r")
     JsonIndex= json.load(Index1)
@@ -210,7 +208,7 @@ def MathsQuestions():
         from tkinter import messagebox
         messagebox.showinfo(title="You're right!", message="Well done! You got the answer correct!")
         window2.destroy()
-        InitMaths2()
+        InitMaths()
             
     def Incorrect():
         from tkinter import messagebox
@@ -231,20 +229,6 @@ def MathsQuestions():
     Button3.pack()
     Button4.pack()
     window2.mainloop()
-
-Realwindow=Tk()
-
-def InitMaths():      
-    Realwindow.title("Mathematics Department")
-    Realwindow.geometry("400x200")
-    Realwindow.configure(background='Dark Blue')
-    widget = Label(Realwindow, text= 'Do you want revision notes or questions?',bg='Light Blue')
-    widget2= Button(Realwindow, text='Revision notes',bg='Cyan',fg='Red',command=Revision)
-    widget3= Button(Realwindow, text='Randomly selected questions',bg='Cyan',fg='Red',command=MathsQuestions)
-    widget.pack()
-    widget2.pack()
-    widget3.pack()
-    Realwindow.mainloop()
     
 InitMaths()
         

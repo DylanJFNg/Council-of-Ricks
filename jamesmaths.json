@@ -1,81 +1,81 @@
 {
 	"index": "5",
 	"1": {
-	"a": "x=1",
-	"b": "x=3",
-	"c": "x=6",
-	"d": "x=8",
-	"q": "Solve the equation: 6x+9=9x+1?
+		"a": "x=1",
+		"b": "x=3",
+		"c": "x=6",
+		"d": "x=8",
+		"q": "Solve the equation: 6x+9=9x+1?
 	},
 	
 	"2": {
-	"a": "All the sides of a scalene triangle are different as well as the value of the angles",
-	"b": "All the sides of a scalene triangle are different but 2 of the angles are equal",
-	"c": "All the sides of a scalene triangle are the same but the angles are different",
-	"d": "All angles of a scalene triangle are different but all the sides are the same length",
-	"q": "What are the properties of a scalene triangle?"
+		"a": "All the sides of a scalene triangle are different as well as the value of the angles",
+		"b": "All the sides of a scalene triangle are different but 2 of the angles are equal",
+		"c": "All the sides of a scalene triangle are the same but the angles are different",
+		"d": "All angles of a scalene triangle are different but all the sides are the same length",
+		"q": "What are the properties of a scalene triangle?"
   	},
   
  	
  	"3": {
- 	"a": "n",
- 	"b": "2n",
- 	"c": "3n",
- 	"d": "3n squared",
- 	"q": "What is the nth term of the sequence: 1,2,3,4,5,6,7,8,9"
+ 		"a": "n",
+ 		"b": "2n",
+ 		"c": "3n",
+ 		"d": "3n squared",
+ 		"q": "What is the nth term of the sequence: 1,2,3,4,5,6,7,8,9"
  	},
  
  
  	"4": {
- 	"a": "-7n-6",
- 	"b": "3n+112",
- 	"c": "-9n+67",
- 	"d": "-3n+1",
- 	"q": "What is the nth term of the sequence: -13,-20,-27,-34"
+ 		"a": "-7n-6",
+ 		"b": "3n+112",
+ 		"c": "-9n+67",
+		"d": "-3n+1",
+		"q": "What is the nth term of the sequence: -13,-20,-27,-34"
  	},
  
  	"5": {
- 	"a": "469.99",
- 	"b": "666.443222",
- 	"c": "389",
- 	"d": "390",
- 	"q": "70.89+339.1"
+		"a": "469.99",
+		"b": "666.443222",
+		"c": "389",
+		"d": "390",
+		"q": "70.89+339.1"
 	},
 
 	"6": {
-	"a": "35.75",
-	"b": "67.43",
-	"c": "345.543",
-	"d": "53.534",
-	"q": "Increase 9 by 297%"
+		"a": "35.75",
+		"b": "67.43",
+		"c": "345.543",
+		"d": "53.534",
+		"q": "Increase 9 by 297%"
 	}
 
 	"7": {
-	"a": "83000000mm",
-	"b":"85500000000mm",
-	"c": "56456456456mm",
-	"d": "5837589347589km"
-	"q": "Convert 8.3km to mm"
+		"a": "83000000mm",
+		"b":"85500000000mm",
+		"c": "56456456456mm",
+		"d": "5837589347589km"
+		"q": "Convert 8.3km to mm"
 	},
 
 	"8": {
-	"a": "h=6"
-	"b": "h=9"
-	"c": "h=77"
-	"d": "h=34"
-	"q": "Solve -2h+10h=9h+4"
+		"a": "h=6"
+		"b": "h=9"
+		"c": "h=77"
+		"d": "h=34"
+		"q": "Solve -2h+10h=9h+4"
 	}
 
 	"9": {
-	"a": "7x10 to the power of 0",
-	"b": "7x10 to the power of 100",
-	"c": "9x23 to the power of 245",
-	"d": "123x0 to the power of 0",
-	"q": "Write 7 in standard form."
+		"a": "7x10 to the power of 0",
+		"b": "7x10 to the power of 100",
+		"c": "9x23 to the power of 245",
+		"d": "123x0 to the power of 0",
+		"q": "Write 7 in standard form."
 	}
 
 	"10": {
-	"a":
+		"a":
 	
 
 

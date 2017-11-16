@@ -54,13 +54,16 @@ activates a defined function with
 
 function_name(parameters_go_here)
 """
+score = 0
+count = 0
 
 
 def english():
+    global score
+    global count
+
     def quiz():
         eng = Tk()
-        score = 0
-        count = 0
         eng.geometry("400x400")
         eng.title("English Quiz")
         while count < 11:
@@ -94,6 +97,43 @@ def english():
     tkMessageBox.showinfo("Score", "Your Score Was: %s" % "you are a faliur")
 
 
+def math():
+    def quiz():
+        mat = Tk()
+        score = 0
+        count = 0
+        mat.geometry("400x400")
+        mat.title("Math Quiz")
+        while count < 11:
+            # This "while" statement will close the window once you have
+            # answered 10 questions on maths
+            def ask_question():
+                global score, question_text, count
+                qq = get_questions("maths.json")
+                eh1 = Label(mat, text="Question " + str(count+1), font="40")
+                eh1.pack()
+                score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font="25")
+                score_readout.pack()
+                question_label = Label(mat, text=qq[4], font="30")
+                question_label.pack()
+
+                def correct():
+                    global score
+                    score = score + 1
+                mat_b1 = Button(mat, text=qq[0], command=correct)
+                mat_b2 = Button(mat, text=qq[1])
+                mat_b3 = Button(mat, text=qq[2])
+                mat_b4 = Button(mat, text=qq[3])
+                bttns = [mat_b1, mat_b2, mat_b3, mat_b4]
+                shuffle(bttns)
+                for mat_ in bttns:
+                    mat_.pack()
+            ask_question()
+            mat.mainloop()
+    quiz()
+    tkMessageBox.showinfo("Score", "Your Score Was: %s" % "you are a faliur")
+
+
 h1 = Label(root, text="Revision", font="78")
 h1.pack()
 logo = ImageTk.PhotoImage(Image.open("logo.png"))
@@ -101,7 +141,7 @@ panel = Label(root, image=logo)
 panel.pack(side="bottom", fill="y", expand="yes")
 bt1 = Button(root, text="English", bg="blue", command=english)
 bt1.pack()
-bt2 = Button(root, text="Maths", bg="blue")
+bt2 = Button(root, text="Maths", bg="blue", command=math)
 bt2.pack()
 bt3 = Button(root, text="Science", bg="blue")
 bt3.pack()

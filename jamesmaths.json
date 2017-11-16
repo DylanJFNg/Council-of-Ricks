@@ -1,5 +1,5 @@
 {
-	"index": "5",
+	"index": 9,
 	"1": {
 		"a": "x=1",
 		"b": "x=3",
@@ -7,7 +7,7 @@
 		"d": "x=8",
 		"q": "Solve the equation: 6x+9=9x+1?"
 	},
-	
+
 	"2": {
 		"a": "All the sides of a scalene triangle are different as well as the value of the angles",
 		"b": "All the sides of a scalene triangle are different but 2 of the angles are equal",
@@ -15,8 +15,8 @@
 		"d": "All angles of a scalene triangle are different but all the sides are the same length",
 		"q": "What are the properties of a scalene triangle?"
   	},
-  
- 	
+
+
  	"3": {
  		"a": "n",
  		"b": "2n",
@@ -24,8 +24,8 @@
  		"d": "3n squared",
  		"q": "What is the nth term of the sequence: 1,2,3,4,5,6,7,8,9"
  	},
- 
- 
+
+
  	"4": {
  		"a": "-7n-6",
  		"b": "3n+112",
@@ -33,7 +33,7 @@
 		"d": "-3n+1",
 		"q": "What is the nth term of the sequence: -13,-20,-27,-34"
  	},
- 
+
  	"5": {
 		"a": "469.99",
 		"b": "666.443222",
@@ -73,9 +73,3 @@
 		"d": "123x0 to the power of 0",
 		"q": "Write 7 in standard form."
 	},
-
-	"10": {
-		"a":
-	}
-
-

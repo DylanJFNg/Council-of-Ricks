@@ -100,8 +100,7 @@ def english():
 def math():
     def quiz():
         mat = Tk()
-        score = 0
-        count = 0
+        global count, score
         mat.geometry("400x400")
         mat.title("Math Quiz")
         while count < 11:
@@ -109,7 +108,7 @@ def math():
             # answered 10 questions on maths
             def ask_question():
                 global score, question_text, count
-                qq = get_questions("maths.json")
+                qq = get_questions("jamesmaths.json")
                 eh1 = Label(mat, text="Question " + str(count+1), font="40")
                 eh1.pack()
                 score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font="25")
@@ -118,20 +117,37 @@ def math():
                 question_label.pack()
 
                 def correct():
-                    global score
+                    global score, count
                     score = score + 1
+                    count = count + 1
+                    unpack_all()
+                    ask_question()
+
+                def incorrect():
+                    global count, score
+                    count = count + 1
+                    unpack_all()
+                    ask_question()
+
+                def unpack_all():
+                    for mat_b in bttns:
+                        mat_b.pack_forget()
+                    score_readout.pack_forget()
+                    eh1.pack_forget()
+                    question_label.pack_forget()
                 mat_b1 = Button(mat, text=qq[0], command=correct)
-                mat_b2 = Button(mat, text=qq[1])
-                mat_b3 = Button(mat, text=qq[2])
-                mat_b4 = Button(mat, text=qq[3])
+                mat_b2 = Button(mat, text=qq[1], command=incorrect)
+                mat_b3 = Button(mat, text=qq[2], command=incorrect)
+                mat_b4 = Button(mat, text=qq[3], command=incorrect)
                 bttns = [mat_b1, mat_b2, mat_b3, mat_b4]
                 shuffle(bttns)
                 for mat_ in bttns:
                     mat_.pack()
             ask_question()
             mat.mainloop()
+        mat.destroy()
+        tkMessageBox.showinfo("Score", "Your Score Was: %s" % "you are a faliur")
     quiz()
-    tkMessageBox.showinfo("Score", "Your Score Was: %s" % "you are a faliur")
 
 
 h1 = Label(root, text="Revision", font="78")

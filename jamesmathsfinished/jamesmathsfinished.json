@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD:jamesmaths.json
 	"index": 9,
+=======
+	"index": 15,
+>>>>>>> 6bcac40becead7d83347cb63568e2baf975627cb:jamesmathsfinished/jamesmathsfinished.json
 	"1": {
 		"a": "x=1",
 		"b": "x=3",
@@ -7,34 +11,41 @@
 		"d": "x=8",
 		"q": "Solve the equation: 6x+9=9x+1?"
 	},
+
 	"2": {
 		"a": "All the sides of a scalene triangle are different as well as the value of the angles",
 		"b": "All the sides of a scalene triangle are different but 2 of the angles are equal",
 		"c": "All the sides of a scalene triangle are the same but the angles are different",
 		"d": "All angles of a scalene triangle are different but all the sides are the same length",
 		"q": "What are the properties of a scalene triangle?"
-	},
-	"3": {
-		"a": "n",
-		"b": "2n",
-		"c": "3n",
-		"d": "3n squared",
-		"q": "What is the nth term of the sequence: 1,2,3,4,5,6,7,8,9"
-	},
-	"4": {
-		"a": "-7n-6",
-		"b": "3n+112",
-		"c": "-9n+67",
+  	},
+
+
+ 	"3": {
+ 		"a": "n",
+ 		"b": "2n",
+ 		"c": "3n",
+ 		"d": "3n squared",
+ 		"q": "What is the nth term of the sequence: 1,2,3,4,5,6,7,8,9"
+ 	},
+
+
+ 	"4": {
+ 		"a": "-7n-6",
+ 		"b": "3n+112",
+ 		"c": "-9n+67",
 		"d": "-3n+1",
 		"q": "What is the nth term of the sequence: -13,-20,-27,-34"
-	},
-	"5": {
+ 	},
+
+ 	"5": {
 		"a": "469.99",
 		"b": "666.443222",
 		"c": "389",
 		"d": "390",
 		"q": "70.89+339.1"
 	},
+
 	"6": {
 		"a": "35.75",
 		"b": "67.43",
@@ -42,13 +53,15 @@
 		"d": "53.534",
 		"q": "Increase 9 by 297%"
 	},
+
 	"7": {
 		"a": "83000000mm",
-		"b": "85500000000mm",
+		"b":"85500000000mm",
 		"c": "56456456456mm",
 		"d": "5837589347589km",
 		"q": "Convert 8.3km to mm"
 	},
+
 	"8": {
 		"a": "h=6",
 		"b": "h=9",
@@ -56,11 +69,63 @@
 		"d": "h=34",
 		"q": "Solve -2h+10h=9h+4"
 	},
+
 	"9": {
 		"a": "7x10 to the power of 0",
 		"b": "7x10 to the power of 100",
 		"c": "9x23 to the power of 245",
 		"d": "123x0 to the power of 0",
 		"q": "Write 7 in standard form."
+	},
+<<<<<<< HEAD:jamesmaths.json
+=======
+
+	"10": {
+		"a": "102",
+		"b": "100",
+		"c": "4050",
+		"d": "44",
+		"q": "How many 20p's are in £20.40"
+	},
+	
+	"11": {
+		"a": "2.26",
+		"b": "4.5",
+		"c": "3.087",
+		"d": "9.4567",
+		"q": "Double 1.13"
+	},
+	
+	"12": {
+		"a": "y=5",
+		"b": "y=36",
+		"c": "y=9",
+		"d": "y=5",
+		"q": "Solve: 3=8-y"
+	},
+
+
+	"13": {
+		"a": "24",
+		"b": "45",
+		"c": "32",
+		"d": "18",
+		"q": "Solve 3=8-y"
+	},
+	
+	"14": {
+		"a": "20 10/13",
+		"b": "90 1/4",
+		"c": "78 2/65",
+		"d": "34 7/67",
+		"q": "Write 270/13 as a mixed number."
+	},
+	
+	"15": {
+		"a": "4",
+		"b": "3",
+		"c": "12",
+		"d": "46",
+		"q": "What is 1 3/5 divided by 4/10"
 	}
-}
+>>>>>>> 6bcac40becead7d83347cb63568e2baf975627cb:jamesmathsfinished/jamesmathsfinished.json

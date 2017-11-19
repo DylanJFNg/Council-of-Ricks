@@ -7,12 +7,8 @@ from pygame import mixer
 # Import pygame mixer library to play audio
 import json
 # library to decode json into python dictionary
-import os
-# Library to communicate with operating system
 from random import randint, shuffle
 # Library to produce random integers and shuffle lists
-import platform
-# Library to tell python what OS you are using
 import tkMessageBox
 # Library to create system dialogs
 
@@ -101,54 +97,79 @@ def math():
     def quiz():
         mat = Tk()
         global count, score
-        mat.geometry("400x400")
+        mat.geometry("800x400")
         mat.title("Math Quiz")
-        while count < 11:
-            # This "while" statement will close the window once you have
-            # answered 10 questions on maths
-            def ask_question():
-                global score, question_text, count
-                qq = get_questions("jamesmaths.json")
-                eh1 = Label(mat, text="Question " + str(count+1), font="40")
-                eh1.pack()
-                score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font="25")
-                score_readout.pack()
-                question_label = Label(mat, text=qq[4], font="30")
-                question_label.pack()
 
-                def correct():
-                    global score, count
-                    score = score + 1
-                    count = count + 1
-                    unpack_all()
+        def ask_question():
+            global score, count
+            qq = get_questions("jamesmaths.json")
+            eh1 = Label(mat, text="Question " + str(count+1), font="40")
+            eh1.pack()
+            score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font="25")
+            score_readout.pack()
+            question_label = Label(mat, text=qq[4], font="30")
+            question_label.pack()
+
+            def correct():
+                global score, count
+                mixer.init(22050, -8, 4, 65536)
+                mixer.music.load('rr.ogg')
+                mixer.music.play(0)
+                score = score + 1
+                count = count + 1
+                unpack_all()
+                if count <= 11:
                     ask_question()
+                else:
+                    end_score = str(score) + " / " + str(10)
+                    tkMessageBox.showinfo("Score", "Your Score Was: %s" % end_score)
+                    mat.destroy()
 
-                def incorrect():
-                    global count, score
-                    count = count + 1
-                    unpack_all()
+            def incorrect():
+                global count, score
+                mixer.init(22050, -8, 4, 65536)
+                mixer.music.load('ww.ogg')
+                mixer.music.play(0)
+                count = count + 1
+                unpack_all()
+                if count < 11:
                     ask_question()
+                else:
+                    end_score = str(score)+"/"+"10"
+                    tkMessageBox.showinfo("Score", "Your Score Was: %s" % score+"Out of 10")
+                    score = 0
+                    count = 0
+                    end_score = 0
+                    mat.destroy()
 
-                def unpack_all():
-                    for mat_b in bttns:
-                        mat_b.pack_forget()
-                    score_readout.pack_forget()
-                    eh1.pack_forget()
-                    question_label.pack_forget()
-                mat_b1 = Button(mat, text=qq[0], command=correct)
-                mat_b2 = Button(mat, text=qq[1], command=incorrect)
-                mat_b3 = Button(mat, text=qq[2], command=incorrect)
-                mat_b4 = Button(mat, text=qq[3], command=incorrect)
-                bttns = [mat_b1, mat_b2, mat_b3, mat_b4]
-                shuffle(bttns)
-                for mat_ in bttns:
-                    mat_.pack()
-            ask_question()
-            mat.mainloop()
-        mat.destroy()
-        tkMessageBox.showinfo("Score", "Your Score Was: %s" % "you are a faliur")
+            def unpack_all():
+                for mat_b in bttns:
+                    mat_b.pack_forget()
+                score_readout.pack_forget()
+                eh1.pack_forget()
+                question_label.pack_forget()
+            mat_b1 = Button(mat, text=qq[0], command=correct)
+            mat_b2 = Button(mat, text=qq[1], command=incorrect)
+            mat_b3 = Button(mat, text=qq[2], command=incorrect)
+            mat_b4 = Button(mat, text=qq[3], command=incorrect)
+            bttns = [mat_b1, mat_b2, mat_b3, mat_b4]
+            shuffle(bttns)
+            for mat_ in bttns:
+                mat_.pack()
+        ask_question()
+        mat.mainloop()
+
     quiz()
 
+
+menu = Menu(root)
+filemenu = Menu(menu, tearoff=0)
+filemenu.add_command(label="Credits")
+# filemenu.add_command(label="Save")
+filemenu.add_separator()
+filemenu.add_command(label="Exit", command=root.quit)
+menu.add_cascade(label="File", menu=filemenu)
+root.config(menu=menu)
 
 h1 = Label(root, text="Revision", font="78")
 h1.pack()

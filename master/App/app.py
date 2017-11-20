@@ -55,42 +55,72 @@ count = 0
 
 
 def english():
-    global score
-    global count
-
     def quiz():
-        eng = Tk()
-        eng.geometry("400x400")
-        eng.title("English Quiz")
-        while count < 11:
-            # This "while" statement will close the window once you have
-            # answered 10 questions on english
+        mat = Tk()
+        global count, score
+        mat.geometry("800x400")
+        mat.title("Math Quiz")
+
+        def ask_question():
+            global score, count
             qq = get_questions("english.json")
-            eh1 = Label(eng, text="Question " + str(count+1), font="40")
+            eh1 = Label(mat, text="Question " + str(count+1), font="40")
             eh1.pack()
-            score_readout = Label(eng, text="Score: " + str(score) + "/" + str(count), font="25")
+            score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font="25")
             score_readout.pack()
-            question_label = Label(eng, text=qq[4], font="30")
+            question_label = Label(mat, text=qq[4], font="30")
             question_label.pack()
 
-            def set_button_names(command):
-                if command == "set":
-                    eng_b1 = Button(eng, text=qq[0])
-                    eng_b2 = Button(eng, text=qq[1])
-                    eng_b3 = Button(eng, text=qq[2])
-                    eng_b4 = Button(eng, text=qq[3])
-                    bttns = [eng_b1, eng_b2, eng_b3, eng_b4]
-                    return bttns
+            def correct():
+                global score, count
+                mixer.init(22050, -8, 4, 65536)
+                mixer.music.load('rr.ogg')
+                mixer.music.play(0)
+                score = score + 1
+                count = count + 1
+                unpack_all()
+                if count <= 11:
+                    ask_question()
+                else:
+                    end_score = str(score) + " / " + str(10)
+                    tkMessageBox.showinfo("Score", "Your Score Was: %s" % end_score)
+                    mat.destroy()
 
-            def place_buttons():
-                bttns = set_button_names("set")
-                shuffle(bttns)
-                for eng_ in bttns:
-                    eng_.pack()
-            place_buttons()
-            eng.mainloop()
+            def incorrect():
+                global count, score
+                mixer.init(22050, -8, 4, 65536)
+                mixer.music.load('ww.ogg')
+                mixer.music.play(0)
+                count = count + 1
+                unpack_all()
+                if count < 11:
+                    ask_question()
+                else:
+                    end_score = str(score)+"/"+"10"
+                    tkMessageBox.showinfo("Score", "Your Score Was: %s" % score+"Out of 10")
+                    score = 0
+                    count = 0
+                    end_score = 0
+                    mat.destroy()
+
+            def unpack_all():
+                for mat_b in bttns:
+                    mat_b.pack_forget()
+                score_readout.pack_forget()
+                eh1.pack_forget()
+                question_label.pack_forget()
+            mat_b1 = Button(mat, text=qq[0], command=correct)
+            mat_b2 = Button(mat, text=qq[1], command=incorrect)
+            mat_b3 = Button(mat, text=qq[2], command=incorrect)
+            mat_b4 = Button(mat, text=qq[3], command=incorrect)
+            bttns = [mat_b1, mat_b2, mat_b3, mat_b4]
+            shuffle(bttns)
+            for mat_ in bttns:
+                mat_.pack()
+        ask_question()
+        mat.mainloop()
+
     quiz()
-    tkMessageBox.showinfo("Score", "Your Score Was: %s" % "you are a faliur")
 
 
 def math():
@@ -98,7 +128,7 @@ def math():
         mat = Tk()
         global count, score
         mat.geometry("800x400")
-        mat.title("Math Quiz")
+        mat.title("English Quiz")
 
         def ask_question():
             global score, count
@@ -167,7 +197,7 @@ filemenu = Menu(menu, tearoff=0)
 filemenu.add_command(label="Credits")
 # filemenu.add_command(label="Save")
 filemenu.add_separator()
-filemenu.add_command(label="Exit", command=root.quit)
+filemenu.add_command(label="Exit", command=root.destroy)
 menu.add_cascade(label="File", menu=filemenu)
 root.config(menu=menu)
 

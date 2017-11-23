@@ -21,6 +21,21 @@
     "c": "m x v squared",
     "d": "m / v squard",
     "q": "How do you calculate momentum?
-  }
+  },
+  
+  "4": {
+    "a": "The apple fell on his head",
+    "b": "He was MP for Cambrdige",
+    "c": "He was born on Christmas day",
+    "d": "He had friends",
+    "q": "What statement about Issac Newton is false
+  },
+  
+  "5": {
+    "a": "H20",
+    "b": "H30",
+    "c": "HO2",
+    "d": "CO2",
+    "q": "What is the chemical formula for water?"
   
   }

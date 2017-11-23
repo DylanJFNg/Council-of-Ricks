@@ -37,5 +37,37 @@
     "c": "HO2",
     "d": "CO2",
     "q": "What is the chemical formula for water?"
+  },  
   
+  "6": {
+    "a": "Oxygen",
+    "b": "Carbon",
+    "c": "Nitrogen",
+    "d": "Sulphur",
+    "q": "WHich element has the atomic number 8?"
+  },
+  
+  "7": {
+    "a": "Electrons",
+    "b": "Protons",
+    "c": "Neutrons",
+    "d": "Weight",
+    "q": "What does an element lose when they are a positive ion?"
+  }.
+  
+  "8": {
+    "a": "Cellulose Cell Wall",
+    "b": "Cell Membrane",
+    "c": "Carbon Cell Wall",
+    "d": "Fructose Cell Wall",
+    "q": "What is the proper name of a Cell Wall?"
+  }.
+
+  "9": {
+    "a": "The movement of water from a dilute solution to a concentrated solution through a semi-permeable membrane",
+    "b": "The movement of water from a concentrated solution to a dilute solution through a semi-permeable membrane",
+    "c": "The movement of water form a dilute solution to a concentrated solution through a permeable membrane",
+    "d": "The movement of water from a concentrated solution to a dilute solution through a permeable membrane",
+  },
+
   }

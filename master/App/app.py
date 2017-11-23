@@ -54,7 +54,9 @@ score = 0
 count = 0
 
 
-def english():
+def english(tk):
+    tk.destroy()
+
     def quiz():
         mat = Tk()
         global count, score
@@ -64,6 +66,79 @@ def english():
         def ask_question():
             global score, count
             qq = get_questions("english.json")
+            eh1 = Label(mat, text="Question " + str(count+1), font="40")
+            eh1.pack()
+            score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font="25")
+            score_readout.pack()
+            question_label = Label(mat, text=qq[4], font="30")
+            question_label.pack()
+
+            def correct():
+                global score, count
+                mixer.init(22050, -8, 4, 65536)
+                mixer.music.load('rr.ogg')
+                mixer.music.play(0)
+                score = score + 1
+                count = count + 1
+                unpack_all()
+                if count <= 11:
+                    ask_question()
+                else:
+                    end_score = str(score) + " / " + str(10)
+                    tkMessageBox.showinfo("Score", "Your Score Was: %s" % end_score)
+                    mat.destroy()
+
+            def incorrect():
+                global count, score
+                mixer.init(22050, -8, 4, 65536)
+                mixer.music.load('ww.ogg')
+                mixer.music.play(0)
+                count = count + 1
+                unpack_all()
+                if count < 10:
+                    ask_question()
+                else:
+                    # end_score = str(score)+"/"+"10"
+                    mat.destroy()
+                    tkMessageBox.showinfo("Score", "Your Score Was: %s" % score+" Out of 10")
+                    mat.destroy()
+                    score = 0
+                    count = 0
+                    # end_score = 0
+
+
+            def unpack_all():
+                for mat_b in bttns:
+                    mat_b.pack_forget()
+                score_readout.pack_forget()
+                eh1.pack_forget()
+                question_label.pack_forget()
+            mat_b1 = Button(mat, text=qq[0], command=correct)
+            mat_b2 = Button(mat, text=qq[1], command=incorrect)
+            mat_b3 = Button(mat, text=qq[2], command=incorrect)
+            mat_b4 = Button(mat, text=qq[3], command=incorrect)
+            bttns = [mat_b1, mat_b2, mat_b3, mat_b4]
+            shuffle(bttns)
+            for mat_ in bttns:
+                mat_.pack()
+        ask_question()
+        mat.mainloop()
+
+    quiz()
+
+
+def science(tk):
+    tk.destroy()
+
+    def quiz():
+        mat = Tk()
+        global count, score
+        mat.geometry("800x400")
+        mat.title("Science Quiz")
+
+        def ask_question():
+            global score, count
+            qq = get_questions("jamesmaths.json")
             eh1 = Label(mat, text="Question " + str(count+1), font="40")
             eh1.pack()
             score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font="25")
@@ -123,7 +198,8 @@ def english():
     quiz()
 
 
-def math():
+def math(tk):
+    tk.destroy()
     def quiz():
         mat = Tk()
         global count, score
@@ -206,11 +282,11 @@ h1.pack()
 logo = ImageTk.PhotoImage(Image.open("logo.png"))
 panel = Label(root, image=logo)
 panel.pack(side="bottom", fill="y", expand="yes")
-bt1 = Button(root, text="English", bg="blue", command=english)
+bt1 = Button(root, text="English", bg="blue", command=english(root))
 bt1.pack()
 bt2 = Button(root, text="Maths", bg="blue", command=math)
 bt2.pack()
-bt3 = Button(root, text="Science", bg="blue")
+bt3 = Button(root, text="Science", bg="blue", command=science)
 bt3.pack()
 h2 = Label(root, text="(c) Council Of Ricks 2017", font="30")
 h2.pack()

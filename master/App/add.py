@@ -1,10 +1,7 @@
-from Tkinter import *
-import json
-
-t = Tk()
-
-t.title("Question Input")
-l1 = Label(t,text="Question Input:", font="35")
-l1.pack()
-q1 = Entry(t)
-q1.pack()
+from pygame import mixer
+import time
+while True:
+    mixer.init(22050, -8, 4, 65536)
+    mixer.music.load('ww.ogg')
+    mixer.music.play(0)
+    time.sleep(1.25)

@@ -54,8 +54,7 @@ score = 0
 count = 0
 
 
-def english(tk):
-    tk.destroy()
+def english():
 
     def quiz():
         mat = Tk()
@@ -65,7 +64,9 @@ def english(tk):
 
         def ask_question():
             global score, count
+            # get globals
             qq = get_questions("english.json")
+            # retrive questions from json parcer with inputed json files
             eh1 = Label(mat, text="Question " + str(count+1), font="40")
             eh1.pack()
             score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font="25")
@@ -127,8 +128,7 @@ def english(tk):
     quiz()
 
 
-def science(tk):
-    tk.destroy()
+def science():
 
     def quiz():
         mat = Tk()
@@ -198,13 +198,13 @@ def science(tk):
     quiz()
 
 
-def math(tk):
-    tk.destroy()
+def math():
+
     def quiz():
         mat = Tk()
         global count, score
         mat.geometry("800x400")
-        mat.title("English Quiz")
+        mat.title("Maths Quiz")
 
         def ask_question():
             global score, count
@@ -268,6 +268,7 @@ def math(tk):
     quiz()
 
 
+
 menu = Menu(root)
 filemenu = Menu(menu, tearoff=0)
 filemenu.add_command(label="Credits")
@@ -280,9 +281,11 @@ root.config(menu=menu)
 h1 = Label(root, text="Revision", font="78")
 h1.pack()
 logo = ImageTk.PhotoImage(Image.open("logo.png"))
+# logo2 = ImageTk.PhotoImage(Image.open("big_1489974512_image.jpg"))
+# root.config(image=logo2)
 panel = Label(root, image=logo)
 panel.pack(side="bottom", fill="y", expand="yes")
-bt1 = Button(root, text="English", bg="blue", command=english(root))
+bt1 = Button(root, text="English", bg="blue", command=english)
 bt1.pack()
 bt2 = Button(root, text="Maths", bg="blue", command=math)
 bt2.pack()

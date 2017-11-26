@@ -106,9 +106,6 @@ def english():
                     count = 0
                     messagebox.showinfo("Score", "Your Score Was: %s" % score+" Out of 10")
                     mat.destroy()
-
-
-
             def unpack_all():
                 for mat_b in bttns:
                     mat_b.pack_forget()
@@ -145,7 +142,7 @@ def science():
 
         def ask_question():
             global score, count
-            qq = get_questions("master/jamesscience.json")
+            qq = get_questions("master/App/jamesscience.json")
             eh1 = Label(mat, text="Question " + str(count+1), font="40")
             eh1.pack()
             score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font="25")

@@ -1,28 +1,19 @@
 import tkinter as Tk
+# Import Statements
+from tkinter import messagebox
 from tkinter import *
-import sys
-import os
-import json
-from pprint import pprint
-from random import randint, shuffle
-from builtins import str
-
 # Tkinter GUI creating library
-import PIL
+import sys
 from PIL import ImageTk, Image
 # from photo image library import Tkinter image and image manipulation
 from pygame import mixer
 # Import pygame mixer library to play audio
 import json
 # library to decode json into python dictionary
-import os
-# Library to communicate with operating system
 from random import randint, shuffle
 # Library to produce random integers and shuffle lists
-import platform
-# Library to tell python what OS you are using
-from tkinter import messagebox
-# Library to create system dialogs:
+# Library to create system dialogs
+
 root = Tk()
 # Set root to main tkinter window
 root.minsize(width=666, height=666)
@@ -30,7 +21,8 @@ root.minsize(width=666, height=666)
 root.title("Revision")
 # Set the title at top of the window
 
-
+sound = True
+# Variable to allow the user to disable sound
 
 
 def get_questions(json_file):
@@ -62,294 +54,254 @@ function_name(parameters_go_here)
 """
 
 
+
 def english():
+    englishInit=Tk()
+    englishInit.geometry("800x400")
     def quiz():
-        eng = Tk()
-        score = 0
-        count = 0
-        eng.geometry("400x400")
-        eng.title("English Quiz")
-        def set_button_names(command):
-            if command == "set":
-                eng_b1 = Button(eng, text=qq[0])
-                eng_b2 = Button(eng, text=qq[1])
-                eng_b3 = Button(eng, text=qq[2])
-                eng_b4 = Button(eng, text=qq[3])
-                bttns = [eng_b1, eng_b2, eng_b3, eng_b4]
-                return bttns
-        def place_buttons():
-            bttns = set_button_names("set")
-            shuffle(bttns)
-            for eng_ in bttns:
-                eng_.pack()
-            count=count+1
-        while count < 11:
-            # This "while" statement will close the window once you have
-            # answered 10 questions on english
+        mat = Tk()
+        mat.geometry("800x400")
+        mat.title("English Quiz")
+        global score,count
+        score=0
+        count=0
+        def ask_question():
+            # get globals
             qq = get_questions("master/App/english.json")
-            eh1 = Label(eng, text="Question " + str(count+1), font="40")
+            # retrive questions from json parcer with inputed json files
+            eh1 = Label(mat, text="Question " + str(count+1), font="40")
             eh1.pack()
-            score_readout = Label(eng, text="Score: " + str(score) + "/" + str(count), font="25")
+            score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font="25")
             score_readout.pack()
-            question_label = Label(eng, text=qq[4], font="30")
+            question_label = Label(mat, text=qq[4], font="30")
             question_label.pack()
-            place_buttons()
-            eng.mainloop()
-    quiz()
-    messagebox.showinfo("Score", "Your Score Was: %s")
+
+            def correct():
+                global score, count
+                mixer.init(22050, -8, 4, 65536)
+                mixer.music.load('master/App/rr.ogg')
+                mixer.music.play(0)
+                score = score + 1
+                count = count + 1
+                unpack_all()
+                if count <= 11:
+                    ask_question()
+                else:
+                    end_score = str(score) + " / " + str(10)
+                    messagebox.showinfo("Score", "Your Score Was: %s" % end_score)
+                    mat.destroy()
+
+            def incorrect():
+                global count, score
+                mixer.init(22050, -8, 4, 65536)
+                mixer.music.load('master/App/ww.ogg')
+                mixer.music.play(0)
+                count = count + 1
+                unpack_all()
+                if count < 10:
+                    ask_question()
+                else:
+                    end_score = str(score)+"/"+ str(count)
+                    score = 0
+                    count = 0
+                    messagebox.showinfo("Score", "Your Score Was: %s" % score+" Out of 10")
+                    mat.destroy()
 
 
-def InitMaths():      
-    def BackToRoot():
-        python = sys.executable
-        os.execl(python, python, * sys.argv)
-    global Realwindow
-    Realwindow=Tk()
-    Realwindow.title("Mathematics Department")
-    Realwindow.geometry("400x200")
-    Realwindow.configure(background='Dark Blue')
-    widget = Label(Realwindow, text= 'Do you want revision notes or questions?',bg='Light Blue')
-    widget2= Button(Realwindow, text='Revision notes',bg='Cyan',fg='Red',command=Revision)
-    widget3= Button(Realwindow, text='Randomly selected questions',bg='Cyan',fg='Red',command=MathsQuestions)
-    widget.pack()
-    widget2.pack()
-    widget3.pack()
-    backButton=Button(Realwindow,text="Back",bg='Cyan',fg='Red',command=BackToRoot)
-    backButton.pack()
-    Realwindow.mainloop()
-def Revision():
-    Realwindow.destroy()
-    window3=Tk()
-    window3.title("Revision")
-    window3.geometry("1000x800")
-    window3.configure(background='Dark Blue')
-    def back():
-        window3.destroy()
-        InitMaths()
-    TrianglesText=open("Resources\TrianglesAndTrigonometricRatios.txt","r")
-    SequencesText=open("Resources\SequencesRevision.txt","r")
-    AnglesText=open("Resources\AnglesRevision.txt","r")
-    IndicesText=open("Resources\IndicesRevision.txt","r")
-    PrimeText=open("Resources\PrimeNumbers.txt","r")
 
-    Triangles=TrianglesText.read()
-    Label2=Label(window3,text=Triangles,font=("none",10))
-
-    Angles=AnglesText.read()
-    Label3=Label(window3,text=Angles,font=("none",10))
-
-    Sequences=SequencesText.read()
-    Label4=Label(window3,text=Sequences,font=("none",10))
-
-    Indices=IndicesText.read()
-    Label5=Label(window3,text=Indices,font=("none",10))
-
-    Prime=PrimeText.read()
-    Label6=Label(window3,text=Prime,font=("none",10))
-
-    def ReadTriangles():
-        def back2():
-            Label2.pack_forget()
-            Label1.pack()
-            IndicesButton.pack()
-            SequencesButton.pack()
-            PrimesButton.pack()
-            AnglesButton.pack()
-            TrianglesButton.pack()
-            BackButton.pack()
-            BackButton2.destroy()
-            window3.mainloop()
-        Label2.pack()
-        Label1.pack_forget()
-        IndicesButton.pack_forget()
-        SequencesButton.pack_forget()
-        PrimesButton.pack_forget()
-        AnglesButton.pack_forget()
-        TrianglesButton.pack_forget()
-        BackButton.pack_forget()
-        BackButton2=Button(window3,text="Back",command=back2)
-        BackButton2.pack()
-        window3.mainloop()
-        
-    def ReadAngles():
-        def back3():
-            Label3.pack_forget()
-            Label1.pack()
-            IndicesButton.pack()
-            SequencesButton.pack()
-            PrimesButton.pack()
-            AnglesButton.pack()
-            TrianglesButton.pack()
-            BackButton.pack()
-            BackButton2.destroy()
-            window3.mainloop()
-        Label3.pack()
-        Label1.pack_forget()
-        AnglesButton.pack_forget()
-        TrianglesButton.pack_forget()
-        IndicesButton.pack_forget()
-        SequencesButton.pack_forget()
-        PrimesButton.pack_forget()
-        BackButton.pack_forget()
-        BackButton2=Button(window3,text="Back",command=back3)
-        BackButton2.pack()
-        window3.mainloop()
-            
-    def ReadIndices():
-        def back4():
-            Label5.pack_forget()
-            Label1.pack()
-            IndicesButton.pack()
-            SequencesButton.pack()
-            PrimesButton.pack()
-            AnglesButton.pack()
-            TrianglesButton.pack()
-            BackButton.pack()
-            BackButton2.destroy()
-            window3.mainloop()
-        Label5.pack()
-        Label1.pack_forget()
-        AnglesButton.pack_forget()
-        TrianglesButton.pack_forget()
-        IndicesButton.pack_forget()
-        SequencesButton.pack_forget()
-        PrimesButton.pack_forget()
-        BackButton.pack_forget()
-        BackButton2=Button(window3,text="Back",command=back4)
-        BackButton2.pack()
-        window3.mainloop()  
-            
-    def ReadSequences():
-        def back5():
-            Label4.pack_forget()
-            Label1.pack()
-            IndicesButton.pack()
-            SequencesButton.pack()
-            PrimesButton.pack()
-            AnglesButton.pack()
-            TrianglesButton.pack()
-            BackButton.pack()
-            BackButton2.destroy()
-            window3.mainloop()
-        Label4.pack()
-        Label1.pack_forget()
-        AnglesButton.pack_forget()
-        TrianglesButton.pack_forget()
-        IndicesButton.pack_forget()
-        SequencesButton.pack_forget()
-        PrimesButton.pack_forget()
-        BackButton.pack_forget()
-        BackButton2=Button(window3,text="Back",command=back5)
-        BackButton2.pack()
-        window3.mainloop() 
-        
-    def ReadPrime():
-        def back6():
-            Label6.pack_forget()
-            Label1.pack()
-            IndicesButton.pack()
-            SequencesButton.pack()
-            PrimesButton.pack()
-            AnglesButton.pack()
-            TrianglesButton.pack()
-            BackButton.pack()
-            BackButton2.destroy()
-            window3.mainloop()
-        Label6.pack()
-        Label1.pack_forget()
-        AnglesButton.pack_forget()
-        TrianglesButton.pack_forget()
-        IndicesButton.pack_forget()
-        SequencesButton.pack_forget()
-        PrimesButton.pack_forget()
-        BackButton.pack_forget()
-        BackButton2=Button(window3,text="Back",command=back6)
-        BackButton2.pack()
-        window3.mainloop() 
-
-     
-    Label1=Label(window3,text="Which mathematics subject do you want?",bg='cyan')
-    AnglesButton=Button(window3,text="Angles",command=ReadAngles,bg='cyan')
-    TrianglesButton=Button(window3,text="Triangles and trigonometrical ratios",command=ReadTriangles,bg='cyan')
-    IndicesButton=Button(window3,text="Indices",command=ReadIndices,bg='cyan')
-    SequencesButton=Button(window3,text="Sequences",command=ReadSequences,bg='cyan')
-    PrimesButton=Button(window3,text="Prime Numbers",command=ReadPrime,bg='cyan')
-    BackButton=Button(window3,text="Back",command=back,bg='Black',fg='White')
-    Label1.pack()
-    IndicesButton.pack()
-    SequencesButton.pack()
-    PrimesButton.pack()
-    AnglesButton.pack()
-    TrianglesButton.pack()
-    BackButton.pack()
-    window3.mainloop()
-def MathsQuestions():
-    Realwindow.destroy()
-    Index1 = open("Resources/Maths.json","r")
-    JsonIndex= json.load(Index1)
-    window2= Tk()
-    window2.title("Maths questions")
-    window2.geometry("700x700")
-    window2.configure(background='Dark Blue')
-    def get_MathsQuestions():
-        index = JsonIndex["Index"]  
-        RealIndex = int(index)  
-        tmp = str(randint(1,RealIndex))
-        Real_question_selector = JsonIndex[tmp]   
-        final_question = [Real_question_selector["a"], Real_question_selector["b"], Real_question_selector["c"], Real_question_selector["d"], Real_question_selector["q"]]
-        return final_question
-        
-    def Correct():
-        from tkinter import messagebox
-        messagebox.showinfo(title="You're right!", message="Well done! You got the answer correct!")
-        InitMaths()
-        window2.destroy()
-    def Incorrect():
-        from tkinter import messagebox
-        messagebox.showinfo(title="Incorrect answer", message= "That's the wrong answer. Try again.")
-    
-
-    questions=get_MathsQuestions()
-    MathsLabel=Label(window2,text=questions[4])
-    MathsLabel.pack()
-    def set_Maths_button_names(command):
-        if command == "set":
-            Maths_b1 = Button(window2, text=questions[0],command=Correct)
-            Maths_b2 = Button(window2, text=questions[1],command=Incorrect)
-            Maths_b3 = Button(window2, text=questions[2],command=Incorrect)
-            Maths_b4 = Button(window2, text=questions[3],command=Incorrect)
-            bttns = [Maths_b1, Maths_b2, Maths_b3, Maths_b4]
-            return bttns
-    def ButtonPlacements():
-        def place_buttons():
-            bttns = set_Maths_button_names("set")
+            def unpack_all():
+                for mat_b in bttns:
+                    mat_b.pack_forget()
+                score_readout.pack_forget()
+                eh1.pack_forget()
+                question_label.pack_forget()
+            mat_b1 = Button(mat, text=qq[0], command=correct)
+            mat_b2 = Button(mat, text=qq[1], command=incorrect)
+            mat_b3 = Button(mat, text=qq[2], command=incorrect)
+            mat_b4 = Button(mat, text=qq[3], command=incorrect)
+            bttns = [mat_b1, mat_b2, mat_b3, mat_b4]
             shuffle(bttns)
-            for window2_ in bttns:
-                window2_.pack()
-        place_buttons()
-        window2.mainloop()
-    ButtonPlacements()
+            for mat_ in bttns:
+                mat_.pack()
+        ask_question()
+        mat.mainloop()
+    englishInit.configure(background='Red')
+    RevisionOpener=Button(englishInit,text="Revision",bg='cyan')
+    QuizOpener=Button(englishInit,text="Quiz",command=quiz,bg='cyan')
+    RevisionOpener.pack()
+    QuizOpener.pack()
+    englishInit.mainloop()
+
+
+def science():
+
+    def quiz():
+        mat = Tk()
+        global count, score
+        score=0
+        count=0
+        mat.geometry("800x400")
+        mat.title("Science Quiz")
+
+        def ask_question():
+            global score, count
+            qq = get_questions("master/jamesscience.json")
+            eh1 = Label(mat, text="Question " + str(count+1), font="40")
+            eh1.pack()
+            score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font="25")
+            score_readout.pack()
+            question_label = Label(mat, text=qq[4], font="30")
+            question_label.pack()
+
+            def correct():
+                global score, count
+                mixer.init(22050, -8, 4, 65536)
+                mixer.music.load('master/App/rr.ogg')
+                mixer.music.play(0)
+                score = score + 1
+                count = count + 1
+                unpack_all()
+                if count <= 11:
+                    ask_question()
+                else:
+                    end_score = str(score) + " / " + "12"
+                    messagebox.showinfo("Score", "Your Score Was: %s" % end_score)
+                    mat.destroy()
+
+            def incorrect():
+                global count, score
+                mixer.init(22050, -8, 4, 65536)
+                mixer.music.load('master/App/ww.ogg')
+                mixer.music.play(0)
+                count = count + 1
+                unpack_all()
+                if count < 11:
+                    ask_question()
+                else:
+                    end_score = str(score)+"/"+"10"
+                    messagebox.showinfo("Score", "Your Score Was: %s" % score+"Out of 10")
+                    score = 0
+                    count = 0
+                    end_score = 0
+                    mat.destroy()
+
+            def unpack_all():
+                for mat_b in bttns:
+                    mat_b.pack_forget()
+                score_readout.pack_forget()
+                eh1.pack_forget()
+                question_label.pack_forget()
+            mat_b1 = Button(mat, text=qq[0], command=correct)
+            mat_b2 = Button(mat, text=qq[1], command=incorrect)
+            mat_b3 = Button(mat, text=qq[2], command=incorrect)
+            mat_b4 = Button(mat, text=qq[3], command=incorrect)
+            bttns = [mat_b1, mat_b2, mat_b3, mat_b4]
+            shuffle(bttns)
+            for mat_ in bttns:
+                mat_.pack()
+        ask_question()
+        mat.mainloop()
+
+    quiz()
+
+
+def math():
+
+    def quiz():
+        mat = Tk()
+        global count, score
+        score=0
+        count=0
+        mat.geometry("800x400")
+        mat.title("Maths Quiz")
+
+        def ask_question():
+            global score, count
+            qq = get_questions("jamesmaths.json")
+            eh1 = Label(mat, text="Question " + str(count+1), font="40")
+            eh1.pack()
+            score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font="25")
+            score_readout.pack()
+            question_label = Label(mat, text=qq[4], font="30")
+            question_label.pack()
+
+            def correct():
+                global score, count
+                mixer.init(22050, -8, 4, 65536)
+                mixer.music.load('master/App/rr.ogg')
+                mixer.music.play(0)
+                score = score + 1
+                count = count + 1
+                unpack_all()
+                if count <= 11:
+                    ask_question()
+                else:
+                    end_score = str(score) + " / " + str(10)
+                    messagebox.showinfo("Score", "Your Score Was: %s" % end_score)
+                    mat.destroy()
+                    
+            def incorrect():
+                global count, score
+                mixer.init(22050, -8, 4, 65536)
+                mixer.music.load('master/App/ww.ogg')
+                mixer.music.play(0)
+                count = count + 1
+                unpack_all()
+                if count < 11:
+                    ask_question()
+                else:
+                    end_score = str(score)+"/"+"10"
+                    messagebox.showinfo("Score", "Your Score Was: %s" % score+"Out of 10")
+                    score = 0
+                    count = 0
+                    end_score = 0
+                    mat.destroy()
+
+            def unpack_all():
+                for mat_b in bttns:
+                    mat_b.pack_forget()
+                score_readout.pack_forget()
+                eh1.pack_forget()
+                question_label.pack_forget()
+            mat_b1 = Button(mat, text=qq[0], command=correct)
+            mat_b2 = Button(mat, text=qq[1], command=incorrect)
+            mat_b3 = Button(mat, text=qq[2], command=incorrect)
+            mat_b4 = Button(mat, text=qq[3], command=incorrect)
+            bttns = [mat_b1, mat_b2, mat_b3, mat_b4]
+            shuffle(bttns)
+            for mat_ in bttns:
+                mat_.pack()
+        ask_question()
+        mat.mainloop()
+
+    quiz()
+
+
+
+menu = Menu(root)
+filemenu = Menu(menu, tearoff=0)
+filemenu.add_command(label="Credits")
+# filemenu.add_command(label="Save")
+filemenu.add_separator()
+filemenu.add_command(label="Exit", command=sys.exit)
+menu.add_cascade(label="File", menu=filemenu)
+root.config(menu=menu)
+
 h1 = Label(root, text="Revision", font="78")
 h1.pack()
 logo = ImageTk.PhotoImage(Image.open("master/App/logo.png"))
+# logo2 = ImageTk.PhotoImage(Image.open("big_1489974512_image.jpg"))
+# root.config(image=logo2)
 panel = Label(root, image=logo)
 panel.pack(side="bottom", fill="y", expand="yes")
 bt1 = Button(root, text="English", bg="blue", command=english)
 bt1.pack()
-bt2 = Button(root, text="Maths", bg="blue",command=InitMaths)
+bt2 = Button(root, text="Maths", bg="blue", command=math)
 bt2.pack()
-bt3 = Button(root, text="Science", bg="blue")
+bt3 = Button(root, text="Science", bg="blue", command=science)
 bt3.pack()
 h2 = Label(root, text="(c) Council Of Ricks 2017", font="30")
 h2.pack()
+score=0
+count=0
 root.mainloop()
-sound = True 
-
-        
-
-
-
-
-
-
-  

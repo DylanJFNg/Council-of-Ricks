@@ -57,6 +57,8 @@ count = 0
 def english():
 
     def quiz():
+        score = 0
+        count = 0
         mat = Tk()
         global count, score
         mat.geometry("800x400")
@@ -131,6 +133,8 @@ def english():
 def science():
 
     def quiz():
+        score = 0
+        count = 0
         mat = Tk()
         global count, score
         mat.geometry("800x400")
@@ -201,6 +205,8 @@ def science():
 def math():
 
     def quiz():
+        score = 0
+        count = 0
         mat = Tk()
         global count, score
         mat.geometry("800x400")

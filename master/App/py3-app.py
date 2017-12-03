@@ -1,5 +1,7 @@
 # Import Statements
-from Tkinter import *
+import tkinter as Tk
+from tkinter import *
+from tkinter import messagebox
 # Tkinter GUI creating library
 from PIL import ImageTk, Image
 # from photo image library import Tkinter image and image manipulation
@@ -9,7 +11,6 @@ import json
 # library to decode json into python dictionary
 from random import randint, shuffle
 # Library to produce random integers and shuffle lists
-import tkMessageBox
 # Library to create system dialogs
 
 root = Tk()
@@ -62,7 +63,7 @@ def english():
         score=0
         count=0
         mat.geometry("800x400")
-        mat.title("Math Quiz")
+        mat.title("English Quiz")
 
         def ask_question():
             global score, count
@@ -88,7 +89,7 @@ def english():
                     ask_question()
                 else:
                     end_score = str(score) + " / " + str(10)
-                    tkMessageBox.showinfo("Score", "Your Score Was: %s" % end_score)
+                    messagebox.showinfo("Score", "Your Score Was: %s" % score+" Out of 12")
                     mat.destroy()
 
             def incorrect():
@@ -103,7 +104,7 @@ def english():
                 else:
                     # end_score = str(score)+"/"+"10"
                     mat.destroy()
-                    tkMessageBox.showinfo("Score", "Your Score Was: %s" % score+" Out of 10")
+                    messagebox.showinfo("Score", "Your Score Was: %s" % score+" Out of 12")
                     mat.destroy()
                     score = 0
                     count = 0
@@ -162,7 +163,7 @@ def science():
                     ask_question()
                 else:
                     end_score = str(score) + " / " + str(10)
-                    tkMessageBox.showinfo("Score", "Your Score Was: %s" % end_score)
+                    messagebox.showinfo("Score", "Your Score Was: %s" % score+" Out of 12")
                     mat.destroy()
 
             def incorrect():
@@ -176,7 +177,7 @@ def science():
                     ask_question()
                 else:
                     end_score = str(score)+"/"+"10"
-                    tkMessageBox.showinfo("Score", "Your Score Was: %s" % score+"Out of 10")
+                    messagebox.showinfo("Score", "Your Score Was: %s" % score+" Out of 12")
                     score = 0
                     count = 0
                     end_score = 0
@@ -234,7 +235,7 @@ def math():
                     ask_question()
                 else:
                     end_score = str(score) + " / " + str(10)
-                    tkMessageBox.showinfo("Score", "Your Score Was: %s" % end_score)
+                    messagebox.showinfo("Score", "Your Score Was: %s" % score+ " Out of 12")
                     mat.destroy()
 
             def incorrect():
@@ -248,7 +249,7 @@ def math():
                     ask_question()
                 else:
                     end_score = str(score)+"/"+"10"
-                    tkMessageBox.showinfo("Score", "Your Score Was: %s" % score+"Out of 10")
+                    messagebox.showinfo("Score", "Your Score Was: %s" % score+" Out of 12")
                     score = 0
                     count = 0
                     end_score = 0
@@ -293,10 +294,13 @@ panel = Label(root, image=logo)
 panel.pack(side="bottom", fill="y", expand="yes")
 bt1 = Button(root, text="English", bg="blue", command=english)
 bt1.pack()
+bt1.config(height=5,width=30)
 bt2 = Button(root, text="Maths", bg="blue", command=math)
 bt2.pack()
+bt2.config(height=5,width=30)
 bt3 = Button(root, text="Science", bg="blue", command=science)
 bt3.pack()
+bt3.config(height=5,width=30)
 h2 = Label(root, text="(c) Council Of Ricks 2017", font="30")
 h2.pack()
 

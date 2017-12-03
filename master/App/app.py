@@ -57,9 +57,6 @@ function_name(parameters_go_here)
 def english():
 
     def quiz():
-        global count, score
-        score = 0
-        count = 0
         mat = Tk()
         mat.geometry("800x400")
         mat.title("Math Quiz")
@@ -105,7 +102,7 @@ def english():
                     end_score = str(score)+"/"+ str(count)
                     score = 0
                     count = 0
-                    messagebox.showinfo("Score", "Your Score Was: %s" % score+" Out of 10")
+                    messagebox.showinfo("Score", "Your Score Was: %s" % score+" Out of 12")
                     mat.destroy()
 
 
@@ -176,7 +173,7 @@ def science():
                     ask_question()
                 else:
                     end_score = str(score)+"/"+"10"
-                    messagebox.showinfo("Score", "Your Score Was: %s" % score+"Out of 10")
+                    messagebox.showinfo("Score", "Your Score Was: %s" % score+"Out of 12")
                     score = 0
                     count = 0
                     end_score = 0
@@ -248,7 +245,7 @@ def math():
                     ask_question()
                 else:
                     end_score = str(score)+"/"+"10"
-                    messagebox.showinfo("Score", "Your Score Was: %s" % score+"Out of 10")
+                    messagebox.showinfo("Score", "Your Score Was: %s" % score+"Out of 12")
                     score = 0
                     count = 0
                     end_score = 0

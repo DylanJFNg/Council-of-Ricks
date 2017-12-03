@@ -64,17 +64,18 @@ def english():
         count=0
         mat.geometry("800x400")
         mat.title("English Quiz")
+        mat.configure(background="yellow")
 
         def ask_question():
             global score, count
             # get globals
             qq = get_questions("english.json")
             # retrive questions from json parcer with inputed json files
-            eh1 = Label(mat, text="Question " + str(count+1), font="40")
+            eh1 = Label(mat, text="Question " + str(count+1), font=(None,10),fg="blue")
             eh1.pack()
-            score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font="25")
+            score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font=(None,10),fg="blue")
             score_readout.pack()
-            question_label = Label(mat, text=qq[4], font="30")
+            question_label = Label(mat, text=qq[4], font=(None,15),fg="blue")
             question_label.pack()
 
             def correct():
@@ -140,15 +141,16 @@ def science():
         count=0
         mat.geometry("800x400")
         mat.title("Science Quiz")
+        mat.configure(background="yellow")
 
         def ask_question():
             global score, count
             qq = get_questions("science.json")
             eh1 = Label(mat, text="Question " + str(count+1), font="40")
             eh1.pack()
-            score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font="25")
+            score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font=(None,25))
             score_readout.pack()
-            question_label = Label(mat, text=qq[4], font="30")
+            question_label = Label(mat, text=qq[4], font=(None,30))
             question_label.pack()
 
             def correct():
@@ -216,11 +218,11 @@ def math():
         def ask_question():
             global score, count
             qq = get_questions("maths.json")
-            eh1 = Label(mat, text="Question " + str(count+1), font="40",fg="Blue")
+            eh1 = Label(mat, text="Question " + str(count+1), font=(None,40),fg="Blue")
             eh1.pack()
-            score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font="25")
+            score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font=(None,25),fg="Blue")
             score_readout.pack()
-            question_label = Label(mat, text=qq[4], font="30")
+            question_label = Label(mat, text=qq[4], font=(None,30))
             question_label.pack()
 
             def correct():

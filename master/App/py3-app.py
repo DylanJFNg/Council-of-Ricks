@@ -161,7 +161,7 @@ def science():
                 score = score + 1
                 count = count + 1
                 unpack_all()
-                if count < 11:
+                if count < 10:
                     ask_question()
                 else:
                     end_score = str(score) + " / " + str(10)
@@ -175,7 +175,7 @@ def science():
                 mixer.music.play(0)
                 count = count + 1
                 unpack_all()
-                if count < 11:
+                if count < 10:
                     ask_question()
                 else:
                     end_score = str(score)+"/"+"10"
@@ -233,7 +233,7 @@ def math():
                 score = score + 1
                 count = count + 1
                 unpack_all()
-                if count < 11:
+                if count < 10:
                     ask_question()
                 else:
                     end_score = str(score) + " / " + str(10)
@@ -247,7 +247,7 @@ def math():
                 mixer.music.play(0)
                 count = count + 1
                 unpack_all()
-                if count < 11:
+                if count < 10:
                     ask_question()
                 else:
                     end_score = str(score)+"/"+"10"

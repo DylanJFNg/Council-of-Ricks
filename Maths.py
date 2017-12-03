@@ -62,6 +62,7 @@ def english():
         mat = Tk()
         mat.geometry("800x400")
         mat.title("English Quiz")
+        mat.configure(bg="red")
         global score,count
         score=0
         count=0
@@ -104,7 +105,7 @@ def english():
                     end_score = str(score)+"/"+ str(count)
                     score = 0
                     count = 0
-                    messagebox.showinfo("Score", "Your Score Was: %s" % score+" Out of 10")
+                    messagebox.showinfo("Score", "Your Score Was: "+  str(score)+" Out of 12")
                     mat.destroy()
             def unpack_all():
                 for mat_b in bttns:
@@ -112,10 +113,10 @@ def english():
                 score_readout.pack_forget()
                 eh1.pack_forget()
                 question_label.pack_forget()
-            mat_b1 = Button(mat, text=qq[0], command=correct)
-            mat_b2 = Button(mat, text=qq[1], command=incorrect)
-            mat_b3 = Button(mat, text=qq[2], command=incorrect)
-            mat_b4 = Button(mat, text=qq[3], command=incorrect)
+            mat_b1 = Button(mat, text=qq[0], command=correct,width=15,height=3)
+            mat_b2 = Button(mat, text=qq[1], command=incorrect,width=15,height=3)
+            mat_b3 = Button(mat, text=qq[2], command=incorrect,width=15,height=3)
+            mat_b4 = Button(mat, text=qq[3], command=incorrect,width=15,height=3)
             bttns = [mat_b1, mat_b2, mat_b3, mat_b4]
             shuffle(bttns)
             for mat_ in bttns:
@@ -123,10 +124,12 @@ def english():
         ask_question()
         mat.mainloop()
     englishInit.configure(background='Red')
-    RevisionOpener=Button(englishInit,text="Revision",bg='cyan')
-    QuizOpener=Button(englishInit,text="Quiz",command=quiz,bg='cyan')
-    RevisionOpener.pack()
-    QuizOpener.pack()
+    TitleLabel=Label(englishInit,text="Welcome to English!", bg="Red",font=(None,30),fg="Blue")
+    TitleLabel.grid(row=0,column=0)
+    RevisionOpener=Button(englishInit,text="Revision",bg='blue',width=10,height=3,font=(None,20),pady=5,padx=5)
+    RevisionOpener.grid(row=1,column=0)
+    QuizOpener=Button(englishInit,text="Quiz",command=quiz,bg='blue',width=10,height=3,font=(None,20),padx=5,pady=5)
+    QuizOpener.grid(row=1,column=1)
     englishInit.mainloop()
 
 
@@ -214,7 +217,7 @@ def math():
 
         def ask_question():
             global score, count
-            qq = get_questions("jamesmaths.json")
+            qq = get_questions("master/App/jamesmaths.json")
             eh1 = Label(mat, text="Question " + str(count+1), font="40")
             eh1.pack()
             score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font="25")

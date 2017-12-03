@@ -1,5 +1,7 @@
+import tkinter as Tk
 # Import Statements
-from Tkinter import *
+from tkinter import messagebox
+from tkinter import *
 # Tkinter GUI creating library
 from PIL import ImageTk, Image
 # from photo image library import Tkinter image and image manipulation
@@ -9,7 +11,6 @@ import json
 # library to decode json into python dictionary
 from random import randint, shuffle
 # Library to produce random integers and shuffle lists
-import tkMessageBox
 # Library to create system dialogs
 
 root = Tk()
@@ -50,20 +51,19 @@ activates a defined function with
 
 function_name(parameters_go_here)
 """
-score = 0
-count = 0
+
 
 
 def english():
 
     def quiz():
         mat = Tk()
-        global count, score
         mat.geometry("800x400")
         mat.title("Math Quiz")
-
+        global score,count
+        score=0
+        count=0
         def ask_question():
-            global score, count
             # get globals
             qq = get_questions("english.json")
             # retrive questions from json parcer with inputed json files
@@ -86,7 +86,7 @@ def english():
                     ask_question()
                 else:
                     end_score = str(score) + " / " + str(10)
-                    tkMessageBox.showinfo("Score", "Your Score Was: %s" % end_score)
+                    messagebox.showinfo("Score", "Your Score Was: %s" % end_score)
                     mat.destroy()
 
             def incorrect():
@@ -99,13 +99,12 @@ def english():
                 if count < 10:
                     ask_question()
                 else:
-                    # end_score = str(score)+"/"+"10"
-                    mat.destroy()
-                    tkMessageBox.showinfo("Score", "Your Score Was: %s" % score+" Out of 10")
-                    mat.destroy()
+                    end_score = str(score)+"/"+ str(count)
                     score = 0
                     count = 0
-                    # end_score = 0
+                    messagebox.showinfo("Score", "Your Score Was: %s" % score+" Out of 10")
+                    mat.destroy()
+
 
 
             def unpack_all():
@@ -133,6 +132,8 @@ def science():
     def quiz():
         mat = Tk()
         global count, score
+        score=0
+        count=0
         mat.geometry("800x400")
         mat.title("Science Quiz")
 
@@ -158,7 +159,7 @@ def science():
                     ask_question()
                 else:
                     end_score = str(score) + " / " + str(10)
-                    tkMessageBox.showinfo("Score", "Your Score Was: %s" % end_score)
+                    messagebox.showinfo("Score", "Your Score Was: %s" % end_score)
                     mat.destroy()
 
             def incorrect():
@@ -172,7 +173,7 @@ def science():
                     ask_question()
                 else:
                     end_score = str(score)+"/"+"10"
-                    tkMessageBox.showinfo("Score", "Your Score Was: %s" % score+"Out of 10")
+                    messagebox.showinfo("Score", "Your Score Was: %s" % score+"Out of 10")
                     score = 0
                     count = 0
                     end_score = 0
@@ -203,6 +204,8 @@ def math():
     def quiz():
         mat = Tk()
         global count, score
+        score=0
+        count=0
         mat.geometry("800x400")
         mat.title("Maths Quiz")
 
@@ -228,9 +231,9 @@ def math():
                     ask_question()
                 else:
                     end_score = str(score) + " / " + str(10)
-                    tkMessageBox.showinfo("Score", "Your Score Was: %s" % end_score)
+                    messagebox.showinfo("Score", "Your Score Was: %s" % end_score)
                     mat.destroy()
-
+                    
             def incorrect():
                 global count, score
                 mixer.init(22050, -8, 4, 65536)
@@ -242,7 +245,7 @@ def math():
                     ask_question()
                 else:
                     end_score = str(score)+"/"+"10"
-                    tkMessageBox.showinfo("Score", "Your Score Was: %s" % score+"Out of 10")
+                    messagebox.showinfo("Score", "Your Score Was: %s" % score+"Out of 10")
                     score = 0
                     count = 0
                     end_score = 0
@@ -293,5 +296,6 @@ bt3 = Button(root, text="Science", bg="blue", command=science)
 bt3.pack()
 h2 = Label(root, text="(c) Council Of Ricks 2017", font="30")
 h2.pack()
-
+score=0
+count=0
 root.mainloop()

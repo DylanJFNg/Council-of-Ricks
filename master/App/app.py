@@ -57,12 +57,9 @@ function_name(parameters_go_here)
 def english():
 
     def quiz():
-<<<<<<< HEAD
-=======
         global count, score
         score = 0
         count = 0
->>>>>>> branch 'master' of https://github.com/DylanJFNg/Council-of-Ricks.git
         mat = Tk()
         mat.geometry("800x400")
         mat.title("Math Quiz")
@@ -137,14 +134,9 @@ def science():
 
     def quiz():
         global count, score
-<<<<<<< HEAD
         score=0
         count=0
-=======
-        score = 0
-        count = 0
         mat = Tk()
->>>>>>> branch 'master' of https://github.com/DylanJFNg/Council-of-Ricks.git
         mat.geometry("800x400")
         mat.title("Science Quiz")
 
@@ -214,14 +206,9 @@ def math():
 
     def quiz():
         global count, score
-<<<<<<< HEAD
         score=0
-        count=0
-=======
-        score = 0
         count = 0
         mat = Tk()
->>>>>>> branch 'master' of https://github.com/DylanJFNg/Council-of-Ricks.git
         mat.geometry("800x400")
         mat.title("Maths Quiz")
 

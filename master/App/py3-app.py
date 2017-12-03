@@ -145,7 +145,7 @@ def science():
 
         def ask_question():
             global score, count
-            qq = get_questions("science.json")
+            qq = get_questions("Resources/science.json")
             eh1 = Label(mat, text="Question " + str(count+1), font=(None,10))
             eh1.pack()
             score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font=(None,10))

@@ -59,6 +59,8 @@ def english():
     def quiz():
         mat = Tk()
         global count, score
+        score=0
+        count=0
         mat.geometry("800x400")
         mat.title("Math Quiz")
 
@@ -133,6 +135,8 @@ def science():
     def quiz():
         mat = Tk()
         global count, score
+        score=0
+        count=0
         mat.geometry("800x400")
         mat.title("Science Quiz")
 
@@ -203,12 +207,14 @@ def math():
     def quiz():
         mat = Tk()
         global count, score
+        score=0
+        count=0
         mat.geometry("800x400")
         mat.title("Maths Quiz")
 
         def ask_question():
             global score, count
-            qq = get_questions("jamesmaths.json")
+            qq = get_questions("maths.json")
             eh1 = Label(mat, text="Question " + str(count+1), font="40")
             eh1.pack()
             score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font="25")

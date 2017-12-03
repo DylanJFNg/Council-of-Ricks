@@ -104,5 +104,111 @@
 		"c": "12",
 		"d": "46",
 		"q": "What is 1 3/5 divided by 4/10"
+	"16": {
+		"a": "40%",
+		"b": "50%",
+		"c": "30%",
+		"d": "0%",
+		"q": "What percentage of the numbers 1-10 are prime?"
+	},		
+	"17": {
+		"a": "Sin, Cos, tan",
+		"b": "Sin-1",
+		"c": "Cos-1",
+		"d": "Sin-1, cos-1",
+		"q": "Name all the trigonometrical functions" 				
+	},
+	"18": {	
+		"a": "60 degrees",
+		"b": "120 degrees",
+		"c": "180 degrees",
+		"d": "30 degrees",
+		"q": "What is an angle in an equilateral triangle?"
+	},
+	"19": {			
+		"a": "X = (-b + or - square root of (b squared -4ac))/2a",
+		"b": "Y = (b- square root of (b squared -4ac))/2a",
+		"c": "X =(c + square root of (a squared- 4bc)/2a",
+		"d": "Y= c- square root of n squared",
+		"q": "What is the quadratic formula?"
+	},
+	"20": {
+		"a": "9/16",
+		"b": "7/16",
+		"c": "1/2" ,
+		"d": "5/8",
+		"q": "There are 640 marbles in a bag. There are red, blue, and green marbles. After losing a total of 47 green and blue marbles, there are a total of 113 green and blue marbles left. Assuming you still had all the marbles, what are the odds of drawing a red marble two times in a row?"
+	},
+	"21": {
+		"a": "4",
+		"b": "3",
+		"c": "5",
+		"d": "6",			
+		"q": "James is playing on 15 different video games. Each PC can only play 4 games at a time. What is the smallest no of PCs James can use?"
+	}, 
+	"22": {
+		"a": " X = square root of 6",
+		"b": " X= square root of 7",
+		"c": " X= square root of 9",
+		"d": " X= square root of 2",
+		"q": "Solve x squared = 0.5 (x squared +3)"
+	},
+	"23": {
+		"a": "Yes",
+		"b": "No",
+		"c": "Impossible to tell",
+		"d": "In some circumstances, yes and in some circumstances, no",
+		"q": "Is 17+952 > 644 > 355?"
+	},
+	"24": {
+		"a": "5",
+		"b": "4",
+		"c": "6",
+		"d": "5.5",
+		"q": "Monday 31st October 1995. How many more years are there till the 31st October is a Monday again?"
+	},
+	"25": {
+		"a": "February",
+		"b": "All of them",
+		"c": "January",
+		"d": "December",
+		"q": "Which months have 28 days?"
+	},
+	"26": {
+		"a": "45",
+		"b": "At least 40",
+		"c": "39",
+		"d": "55",
+		"q": "What is the exact value of 9x5?"
+	},
+	"27": {
+		"a": "628 cm",
+		"b": "628.38437848378924378… cm",
+		"c": "6283 cm",
+		"d": "62838 cm",
+		"q": "How many cm are in 6.2838437284837892437894278942789243789m to the nearest cm?"
+	},
+	"28": {
+		"a": "90-180 degrees",
+		"b": "0-90 degrees",
+		"c": "90-360 degrees",
+		"d": "180-360 degrees",
+		"q": "What is the angle range for obtuse angles?"
+	},
+	"29": {
+		"a": "3",
+		"b": "4",
+		"c": "2",
+		"d": "5",
+		"q": "How many sides does a triangle have?"
+	},
+	"30": {
+		"a": "3",
+		"b": "1",
+		"c": "5",
+		"d": "7",
+		"q": "After 2, what is the next prime?"
 	}
 }
+	
+

@@ -85,11 +85,11 @@ def english():
                 score = score + 1
                 count = count + 1
                 unpack_all()
-                if count <= 11:
+                if count < 10:
                     ask_question()
                 else:
                     end_score = str(score) + " / " + str(10)
-                    messagebox.showinfo("Score", "Your Score Was: %s" % score+" Out of 12")
+                    messagebox.showinfo("Score", "Your Score Was: %s" % score+" Out of 10")
                     mat.destroy()
 
             def incorrect():
@@ -104,7 +104,7 @@ def english():
                 else:
                     # end_score = str(score)+"/"+"10"
                     mat.destroy()
-                    messagebox.showinfo("Score", "Your Score Was: %s" % score+" Out of 12")
+                    messagebox.showinfo("Score", "Your Score Was: %s" % score+" Out of 10")
                     mat.destroy()
                     score = 0
                     count = 0
@@ -143,7 +143,7 @@ def science():
 
         def ask_question():
             global score, count
-            qq = get_questions("jamesmaths.json")
+            qq = get_questions("Jamesscience.json")
             eh1 = Label(mat, text="Question " + str(count+1), font="40")
             eh1.pack()
             score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font="25")
@@ -159,11 +159,11 @@ def science():
                 score = score + 1
                 count = count + 1
                 unpack_all()
-                if count <= 11:
+                if count < 11:
                     ask_question()
                 else:
                     end_score = str(score) + " / " + str(10)
-                    messagebox.showinfo("Score", "Your Score Was: %s" % score+" Out of 12")
+                    messagebox.showinfo("Score", "Your Score Was: %s" % score+" Out of 10")
                     mat.destroy()
 
             def incorrect():
@@ -177,7 +177,7 @@ def science():
                     ask_question()
                 else:
                     end_score = str(score)+"/"+"10"
-                    messagebox.showinfo("Score", "Your Score Was: %s" % score+" Out of 12")
+                    messagebox.showinfo("Score", "Your Score Was: %s" % score+" Out of 10")
                     score = 0
                     count = 0
                     end_score = 0
@@ -212,11 +212,11 @@ def math():
         count=0
         mat.geometry("800x400")
         mat.title("Maths Quiz")
-
+        mat.config(bg="Yellow")
         def ask_question():
             global score, count
             qq = get_questions("maths.json")
-            eh1 = Label(mat, text="Question " + str(count+1), font="40")
+            eh1 = Label(mat, text="Question " + str(count+1), font="40",fg="Blue")
             eh1.pack()
             score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font="25")
             score_readout.pack()
@@ -231,11 +231,11 @@ def math():
                 score = score + 1
                 count = count + 1
                 unpack_all()
-                if count <= 11:
+                if count < 11:
                     ask_question()
                 else:
                     end_score = str(score) + " / " + str(10)
-                    messagebox.showinfo("Score", "Your Score Was: %s" % score+ " Out of 12")
+                    messagebox.showinfo("Score", "Your Score Was: %s" % score+ " Out of 10")
                     mat.destroy()
 
             def incorrect():
@@ -249,7 +249,7 @@ def math():
                     ask_question()
                 else:
                     end_score = str(score)+"/"+"10"
-                    messagebox.showinfo("Score", "Your Score Was: %s" % score+" Out of 12")
+                    messagebox.showinfo("Score", "Your Score Was: %s" % score+" Out of 10")
                     score = 0
                     count = 0
                     end_score = 0
@@ -285,23 +285,23 @@ filemenu.add_command(label="Exit", command=root.destroy)
 menu.add_cascade(label="File", menu=filemenu)
 root.config(menu=menu)
 
-h1 = Label(root, text="Revision", font="78")
+h1 = Label(root, text="Revision Quiz", font=(None,40),fg="black")
 h1.pack()
 logo = ImageTk.PhotoImage(Image.open("logo.png"))
 # logo2 = ImageTk.PhotoImage(Image.open("big_1489974512_image.jpg"))
 # root.config(image=logo2)
 panel = Label(root, image=logo)
 panel.pack(side="bottom", fill="y", expand="yes")
-bt1 = Button(root, text="English", bg="blue", command=english)
+bt1 = Button(root, text="English", bg="blue", command=english,font=(None,20))
 bt1.pack()
-bt1.config(height=5,width=30)
-bt2 = Button(root, text="Maths", bg="blue", command=math)
+bt1.config(height=1,width=30)
+bt2 = Button(root, text="Maths", bg="blue", command=math,font=(None,20))
 bt2.pack()
-bt2.config(height=5,width=30)
-bt3 = Button(root, text="Science", bg="blue", command=science)
+bt2.config(height=1,width=30)
+bt3 = Button(root, text="Science", bg="blue", command=science,font=(None,20))
 bt3.pack()
-bt3.config(height=5,width=30)
-h2 = Label(root, text="(c) Council Of Ricks 2017", font="30")
+bt3.config(height=1,width=30)
+h2 = Label(root, text="(c) Council Of Ricks 2017", font=(None,8))
 h2.pack()
 
 root.mainloop()

@@ -143,7 +143,7 @@ def science():
 
         def ask_question():
             global score, count
-            qq = get_questions("Jamesscience.json")
+            qq = get_questions("science.json")
             eh1 = Label(mat, text="Question " + str(count+1), font="40")
             eh1.pack()
             score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font="25")

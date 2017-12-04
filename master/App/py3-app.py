@@ -71,10 +71,10 @@ def english():
             # get globals
             qq = get_questions("english.json")
             score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font=(None,20),fg="blue",bg="yellow")
-            score_readout.pack(side="top", anchor="e")
+            score_readout.pack(side="top", anchor="w")
             # retrive questions from json parcer with inputed json files
             eh1 = Label(mat, text="Question " + str(count+1), font=(None,20),fg="blue",bg="yellow")
-            eh1.pack(side="top", anchor="w")
+            eh1.pack(side="top", anchor="e")
  
             spacing_label = Label(mat, text="", font=(None,15),fg="blue",bg="yellow")
             spacing_label.pack()
@@ -116,7 +116,8 @@ def english():
                     count = 0
                     # end_score = 0
 
-
+            spacing_label2=Label(mat,text="",bg='yellow')
+            spacing_label2.pack()
             def unpack_all():
                 for mat_b in bttns:
                     mat_b.pack_forget()
@@ -124,6 +125,7 @@ def english():
                 eh1.pack_forget()
                 question_label.pack_forget()
                 spacing_label.pack_forget()
+                spacing_label2.pack_forget()
             mat_b1 = Button(mat, text=qq[0], command=correct,font=(None,20),width=30)
             mat_b2 = Button(mat, text=qq[1], command=incorrect,font=(None,20),width=30)
             mat_b3 = Button(mat, text=qq[2], command=incorrect,font=(None,20),width=30)
@@ -152,12 +154,16 @@ def science():
         def ask_question():
             global score, count
             qq = get_questions("science.json")
-            eh1 = Label(mat, text="Question " + str(count+1), font=(None,10))
-            eh1.pack()
-            score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font=(None,10))
-            score_readout.pack()
-            question_label = Label(mat, text=qq[4], font=(None,15))
-            question_label.pack()
+            score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font=(None,20),fg='blue',bg='yellow')
+            score_readout.pack(side="top",anchor="e")
+            spacing_label = Label(mat, text="", font=(None,15),fg="blue",bg="yellow")
+            spacing_label.pack()
+            eh1 = Label(mat, text="Question " + str(count+1), font=(None,20),fg="blue",bg="yellow")
+            eh1.pack(side="top",anchor="w")
+            
+
+            question_label = Label(mat, text=qq[4], font=(None,15),fg="blue",bg='yellow')
+            question_label.pack(side="top",anchor="w")
 
             def correct():
                 global score, count
@@ -190,21 +196,23 @@ def science():
                     count = 0
                     end_score = 0
                     mat.destroy()
-
+            spacing_label2=Label(mat,text='',bg='yellow')
+            spacing_label2.pack()
             def unpack_all():
                 for mat_b in bttns:
                     mat_b.pack_forget()
                 score_readout.pack_forget()
                 eh1.pack_forget()
                 question_label.pack_forget()
-            mat_b1 = Button(mat, text=qq[0], command=correct)
-            mat_b2 = Button(mat, text=qq[1], command=incorrect)
-            mat_b3 = Button(mat, text=qq[2], command=incorrect)
-            mat_b4 = Button(mat, text=qq[3], command=incorrect)
+                spacing_label2.pack_forget()
+            mat_b1 = Button(mat, text=qq[0], command=correct,font=(None,20),width=30)
+            mat_b2 = Button(mat, text=qq[1], command=incorrect,font=(None,20),width=30)
+            mat_b3 = Button(mat, text=qq[2], command=incorrect,font=(None,20),width=30)
+            mat_b4 = Button(mat, text=qq[3], command=incorrect,font=(None,20),width=30)
             bttns = [mat_b1, mat_b2, mat_b3, mat_b4]
             shuffle(bttns)
             for mat_ in bttns:
-                mat_.pack()
+                mat_.pack(side='top',anchor='w')
         ask_question()
         mat.mainloop()
 
@@ -224,12 +232,16 @@ def math():
         def ask_question():
             global score, count
             qq = get_questions("maths.json")
-            eh1 = Label(mat, text="Question " + str(count+1), font=(None,10),fg="Blue")
-            eh1.pack()
-            score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font=(None,10),fg="Blue")
-            score_readout.pack()
+            score_readout = Label(mat, text="Score: " + str(score) + "/" + str(count), font=(None,20),fg="Blue",bg='yellow')
+            score_readout.pack(side='top',anchor='e')
+            spacing_label = Label(mat, text="", font=(None,15),fg="blue",bg="yellow")
+            spacing_label.pack()
+            eh1 = Label(mat, text="Question " + str(count+1), font=(None,20),fg="Blue",bg='yellow')
+            eh1.pack(side='top',anchor='w')
+
+
             question_label = Label(mat, text=qq[4], font=(None,15))
-            question_label.pack()
+            question_label.pack(side='top',anchor='w')
 
             def correct():
                 global score, count
@@ -262,21 +274,24 @@ def math():
                     count = 0
                     end_score = 0
                     mat.destroy()
-
+            spacing_label2 = Label(mat, text="", font=(None,15),fg="blue",bg="yellow")
+            spacing_label2.pack()
             def unpack_all():
                 for mat_b in bttns:
                     mat_b.pack_forget()
                 score_readout.pack_forget()
                 eh1.pack_forget()
                 question_label.pack_forget()
-            mat_b1 = Button(mat, text=qq[0], command=correct,font=(None,30))
-            mat_b2 = Button(mat, text=qq[1], command=incorrect,font=(None,30))
-            mat_b3 = Button(mat, text=qq[2], command=incorrect,font=(None,30))
-            mat_b4 = Button(mat, text=qq[3], command=incorrect,font=(None,30))
+                spacing_label.pack_forget()
+                spacing_label2.pack_forget()
+            mat_b1 = Button(mat, text=qq[0], command=correct,font=(None,20),width=30)
+            mat_b2 = Button(mat, text=qq[1], command=incorrect,font=(None,20),width=30)
+            mat_b3 = Button(mat, text=qq[2], command=incorrect,font=(None,20),width=30)
+            mat_b4 = Button(mat, text=qq[3], command=incorrect,font=(None,20),width=30)
             bttns = [mat_b1, mat_b2, mat_b3, mat_b4]
             shuffle(bttns)
             for mat_ in bttns:
-                mat_.pack()
+                mat_.pack(side='top',anchor='w',fill='x')
         ask_question()
         mat.mainloop()
 

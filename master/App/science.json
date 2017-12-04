@@ -19,7 +19,7 @@
     "a": "m x v",
     "b": "m / v",
     "c": "m x v squared",
-    "d": "m / v squard",
+    "d": "m / v squared",
     "q": "How do you calculate momentum?"
   },
 
@@ -76,6 +76,6 @@
     "b": "Group 4",
     "c": "Group 7",
     "d": "Group 5",
-    "q": "What group in the periodic table is Chlorine in?"   
+    "q": "What group in Mendeleev's periodic table is Chlorine in?"   
   }
 }

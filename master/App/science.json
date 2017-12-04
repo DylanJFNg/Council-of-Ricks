@@ -25,7 +25,7 @@
 
   "4": {
     "a": "The apple fell on his head",
-    "b": "He was MP for Cambrdige",
+    "b": "He was MP for Cambridge",
     "c": "He was born on Christmas day",
     "d": "He had friends",
     "q": "What statement about Issac Newton is false?"
@@ -44,30 +44,30 @@
     "b": "Carbon",
     "c": "Nitrogen",
     "d": "Sulphur",
-    "q": "WHich element has the atomic number 8?"
+    "q": "Which element has the atomic number 8?"
   },
 
   "7": {
     "a": "Electrons",
     "b": "Protons",
     "c": "Neutrons",
-    "d": "Weight",
+    "d": "Hair",
     "q": "What does an element lose when they are a positive ion?"
   },
 
   "8": {
-    "a": "Cellulose Cell Wall",
-    "b": "Cell Membrane",
-    "c": "Carbon Cell Wall",
-    "d": "Fructose Cell Wall",
-    "q": "What is the proper name of a Cell Wall?"
+    "a": "Cellulose",
+    "b": "Pure iron",
+    "c": "Pure Carbon",
+    "d": "Fructose",
+    "q": "What is a cell wall made of?"
   },
 
   "9": {
-    "a": "The movement of water from a dilute solution to a concentrated solution through a semi-permeable membrane",
-    "b": "The movement of water from a concentrated solution to a dilute solution through a semi-permeable membrane",
-    "c": "The movement of water form a dilute solution to a concentrated solution through a permeable membrane",
-    "d": "The movement of water from a concentrated solution to a dilute solution through a permeable membrane",
+    "a": "The movement of water from a dilute solute solution to a concentrated solute solution through a semi-permeable membrane",
+    "b": "The movement of water from a concentrated solute solution to a dilute solute solution through a semi-permeable membrane",
+    "c": "The movement of water form a dilute solvent solution to a concentrated solvent solution through a permeable membrane",
+    "d": "The movement of water from a concentrated solvent solution to a dilute solvent solution through a permeable membrane",
     "q": "Define osmosis."
   },
   
@@ -76,6 +76,6 @@
     "b": "Group 4",
     "c": "Group 7",
     "d": "Group 5",
-    "q": "What period group is Chlorine in?"   
+    "q": "What group in the periodic table is Chlorine in?"   
   }
 }

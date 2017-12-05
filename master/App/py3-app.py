@@ -33,7 +33,7 @@ def get_questions(json_file):
     # Decodes JSON data as a python dictionary from a string
     index = json_data['index']
     # Gets index of how many questions are in JSON file
-    question_selector = json_data[str(randint(1, index))]
+    question_selector = json_data[str(randint(1,index))]
     # Randomly selects interger between 1 and the number specified in the index list from JSON
     final_question = [question_selector['a'], question_selector['b'], question_selector['c'], question_selector['d'], question_selector['q']]
     # Creates a list of extracted json answers

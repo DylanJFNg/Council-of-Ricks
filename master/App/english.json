@@ -6,15 +6,13 @@
   	"c": "Colon",
   	"d": "Semi comma",
   	"q": "What is the name of a ';'"
-
   },
-
   "2": {
   	"a": "William Stafford",
   	"b": "Clifford Devoe",
   	"c": "James Urwin",
   	"d": "Bob Dylan",
-  	"q": "Which of these famous people wrote the poem "Fifteen"?
+  	"q": "Which of these famous people wrote the poem 'Fifteen'?"
   },
   "3": {
   	"a":"All of them but the detective",

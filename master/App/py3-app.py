@@ -203,12 +203,13 @@ def science():
                     mat_b.pack_forget()
                 score_readout.pack_forget()
                 eh1.pack_forget()
+                spacing_label.pack_forget()
                 question_label.pack_forget()
                 spacing_label2.pack_forget()
-            mat_b1 = Button(mat, text=qq[0], command=correct,font=(None,12),width=80,bg='gold',fg='blue')
-            mat_b2 = Button(mat, text=qq[1], command=incorrect,font=(None,12),width=80,bg='gold',fg='blue')
-            mat_b3 = Button(mat, text=qq[2], command=incorrect,font=(None,12),width=80,bg='gold',fg='blue')
-            mat_b4 = Button(mat, text=qq[3], command=incorrect,font=(None,12),width=80,bg='gold',fg='blue')
+            mat_b1 = Button(mat, text=qq[0], command=correct,font=(None,12),width=85,bg='gold',fg='blue',wraplength=750)
+            mat_b2 = Button(mat, text=qq[1], command=incorrect,font=(None,12),width=85,bg='gold',fg='blue',wraplength=750)
+            mat_b3 = Button(mat, text=qq[2], command=incorrect,font=(None,12),width=85,bg='gold',fg='blue',wraplength=750)
+            mat_b4 = Button(mat, text=qq[3], command=incorrect,font=(None,12),width=85,bg='gold',fg='blue',wraplength=750)
             bttns = [mat_b1, mat_b2, mat_b3, mat_b4]
             shuffle(bttns)
             for mat_ in bttns:

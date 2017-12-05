@@ -126,10 +126,10 @@ def english():
                 question_label.pack_forget()
                 spacing_label.pack_forget()
                 spacing_label2.pack_forget()
-            mat_b1 = Button(mat, text=qq[0], command=correct,font=(None,20),width=30)
-            mat_b2 = Button(mat, text=qq[1], command=incorrect,font=(None,20),width=30)
-            mat_b3 = Button(mat, text=qq[2], command=incorrect,font=(None,20),width=30)
-            mat_b4 = Button(mat, text=qq[3], command=incorrect,font=(None,20),width=30)
+            mat_b1 = Button(mat, text=qq[0], command=correct,font=(None,20),width=50)
+            mat_b2 = Button(mat, text=qq[1], command=incorrect,font=(None,20),width=50)
+            mat_b3 = Button(mat, text=qq[2], command=incorrect,font=(None,20),width=50)
+            mat_b4 = Button(mat, text=qq[3], command=incorrect,font=(None,20),width=50)
             bttns = [mat_b1, mat_b2, mat_b3, mat_b4]
             shuffle(bttns)
             for mat_ in bttns:
@@ -205,10 +205,10 @@ def science():
                 eh1.pack_forget()
                 question_label.pack_forget()
                 spacing_label2.pack_forget()
-            mat_b1 = Button(mat, text=qq[0], command=correct,font=(None,20),width=30)
-            mat_b2 = Button(mat, text=qq[1], command=incorrect,font=(None,20),width=30)
-            mat_b3 = Button(mat, text=qq[2], command=incorrect,font=(None,20),width=30)
-            mat_b4 = Button(mat, text=qq[3], command=incorrect,font=(None,20),width=30)
+            mat_b1 = Button(mat, text=qq[0], command=correct,font=(None,20),width=50)
+            mat_b2 = Button(mat, text=qq[1], command=incorrect,font=(None,20),width=50)
+            mat_b3 = Button(mat, text=qq[2], command=incorrect,font=(None,20),width=50)
+            mat_b4 = Button(mat, text=qq[3], command=incorrect,font=(None,20),width=50)
             bttns = [mat_b1, mat_b2, mat_b3, mat_b4]
             shuffle(bttns)
             for mat_ in bttns:
@@ -236,11 +236,11 @@ def math():
             score_readout.pack(side='top',anchor='e')
             spacing_label = Label(mat, text="", font=(None,15),fg="blue",bg="yellow")
             spacing_label.pack()
-            eh1 = Label(mat, text="Question " + str(count+1), font=(None,20),fg="Blue",bg='yellow')
+            eh1 = Label(mat, text="Question " + str(count+1), font=(None,15),fg="Blue",bg='yellow')
             eh1.pack(side='top',anchor='w')
 
 
-            question_label = Label(mat, text=qq[4], font=(None,15))
+            question_label = Label(mat, text=qq[4], font=(None,10),bg='yellow',wraplength='750')
             question_label.pack(side='top',anchor='w')
 
             def correct():
@@ -284,14 +284,14 @@ def math():
                 question_label.pack_forget()
                 spacing_label.pack_forget()
                 spacing_label2.pack_forget()
-            mat_b1 = Button(mat, text=qq[0], command=correct,font=(None,20),width=30)
-            mat_b2 = Button(mat, text=qq[1], command=incorrect,font=(None,20),width=30)
-            mat_b3 = Button(mat, text=qq[2], command=incorrect,font=(None,20),width=30)
-            mat_b4 = Button(mat, text=qq[3], command=incorrect,font=(None,20),width=30)
+            mat_b1 = Button(mat, text=qq[0], command=correct,font=(None,12),width=80,bg='gold',fg='blue')
+            mat_b2 = Button(mat, text=qq[1], command=incorrect,font=(None,12),width=80,bg='gold',fg='blue')
+            mat_b3 = Button(mat, text=qq[2], command=incorrect,font=(None,12),width=80,bg='gold',fg='blue')
+            mat_b4 = Button(mat, text=qq[3], command=incorrect,font=(None,12),width=80,bg='gold',fg='blue')
             bttns = [mat_b1, mat_b2, mat_b3, mat_b4]
             shuffle(bttns)
             for mat_ in bttns:
-                mat_.pack(side='top',anchor='w',fill='x')
+                mat_.pack(side='top',anchor='w')
         ask_question()
         mat.mainloop()
 
